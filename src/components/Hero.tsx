@@ -1,22 +1,22 @@
-import { useState, MouseEvent } from 'react';
-import { motion } from 'motion/react';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ArrowRight, 
-  Code2, 
-  Sparkles, 
-  Download, 
+import { useState, MouseEvent } from "react";
+import { motion } from "motion/react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ArrowRight,
+  Code2,
+  Sparkles,
+  Download,
   FileText,
-  Brain, 
+  Brain,
   GraduationCap,
   Briefcase,
   CheckCircle2,
-  ExternalLink
-} from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
-import mimProfilePhoto from '../assets/images/profile_portrait_1786891039038.jpg';
+  ExternalLink,
+} from "lucide-react";
+import { personalInfo } from "../data/portfolioData";
+import mimProfilePhoto from "../assets/images/profile_portrait_1786891039038.jpeg";
 
 interface HeroProps {
   isDark: boolean;
@@ -28,7 +28,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
     e.preventDefault();
     const element = document.querySelector(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -36,7 +36,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
     <section
       id="hero"
       className={`relative min-h-[92vh] flex items-center pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden ${
-        isDark ? 'text-slate-100' : 'text-slate-900'
+        isDark ? "text-slate-100" : "text-slate-900"
       }`}
     >
       {/* Subtle Background Glows */}
@@ -45,12 +45,11 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          
           {/* Left Column: Headline, Bio & Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7 space-y-6 text-left"
           >
             {/* Status Pill with Pulsing Indicator */}
@@ -65,7 +64,9 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
             {/* Main Headline */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <p className={`text-base sm:text-lg font-medium tracking-tight ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+                <p
+                  className={`text-base sm:text-lg font-medium tracking-tight ${isDark ? "text-slate-400" : "text-slate-600"}`}
+                >
                   Hi, I'm
                 </p>
                 <div className="h-px w-8 bg-blue-500/40" />
@@ -76,40 +77,47 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                   Farjana Akter Mim
                 </span>
               </h1>
-              
-              <h2 className={`text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight mt-1 ${
-                isDark ? 'text-slate-200' : 'text-slate-800'
-              }`}>
+
+              <h2
+                className={`text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight mt-1 ${
+                  isDark ? "text-slate-200" : "text-slate-800"
+                }`}
+              >
                 Computer Science & Engineering Student
               </h2>
 
               <p className="text-sm sm:text-base font-semibold text-blue-500 dark:text-blue-400">
-                Exploring Web Development, Machine Learning & Software Engineering
+                Exploring Web Development, Machine Learning & Software
+                Engineering
               </p>
             </div>
 
             {/* Short Description */}
-            <p className={`text-base sm:text-lg leading-relaxed max-w-2xl font-normal ${
-              isDark ? 'text-slate-300' : 'text-slate-600'
-            }`}>
-              I'm a CSE student who enjoys turning ideas into practical projects. I'm currently building my skills in web development, software engineering, machine learning, and problem solving.
+            <p
+              className={`text-base sm:text-lg leading-relaxed max-w-2xl font-normal ${
+                isDark ? "text-slate-300" : "text-slate-600"
+              }`}
+            >
+              I'm a CSE student who enjoys turning ideas into practical
+              projects. I'm currently building my skills in web development,
+              software engineering, machine learning, and problem solving.
             </p>
 
             {/* Key Skill Highlights Pills */}
             <div className="flex flex-wrap gap-2 pt-1">
               {[
-                'React & Frontend',
-                'Node.js & Express',
-                'Python & Scikit-learn',
-                'Computer Graphics',
-                'Data Structures & Algorithms'
+                "React & Frontend",
+                "Node.js & Express",
+                "Python & Scikit-learn",
+                "Computer Graphics",
+                "Data Structures & Algorithms",
               ].map((skill) => (
                 <span
                   key={skill}
                   className={`px-3 py-1 rounded-lg text-xs font-mono border transition-colors ${
                     isDark
-                      ? 'bg-slate-900/70 border-slate-800 text-slate-300 hover:border-blue-500/50'
-                      : 'bg-white border-slate-200 text-slate-700 hover:border-blue-400 shadow-2xs'
+                      ? "bg-slate-900/70 border-slate-800 text-slate-300 hover:border-blue-500/50"
+                      : "bg-white border-slate-200 text-slate-700 hover:border-blue-400 shadow-2xs"
                   }`}
                 >
                   {skill}
@@ -122,11 +130,14 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
               <a
                 id="hero-view-projects-btn"
                 href="#projects"
-                onClick={(e) => scrollToSection(e, '#projects')}
+                onClick={(e) => scrollToSection(e, "#projects")}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-lg shadow-blue-600/30 hover:shadow-blue-600/45 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group cursor-pointer"
               >
                 <span>View My Projects</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </a>
 
               <button
@@ -134,8 +145,8 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                 onClick={onOpenResume}
                 className={`inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm border transition-all duration-200 shadow-xs hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${
                   isDark
-                    ? 'border-slate-700/80 bg-slate-900/90 text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white'
-                    : 'border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400'
+                    ? "border-slate-700/80 bg-slate-900/90 text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white"
+                    : "border-slate-300 bg-white text-slate-800 hover:bg-slate-50 hover:border-slate-400"
                 }`}
               >
                 <FileText size={16} className="text-blue-500" />
@@ -145,11 +156,11 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
               <a
                 id="hero-contact-btn"
                 href="#contact"
-                onClick={(e) => scrollToSection(e, '#contact')}
+                onClick={(e) => scrollToSection(e, "#contact")}
                 className={`inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm border transition-all duration-200 cursor-pointer ${
                   isDark
-                    ? 'border-slate-800 bg-slate-950/60 text-slate-300 hover:text-white hover:border-slate-700 hover:bg-slate-900'
-                    : 'border-slate-200 bg-slate-100/80 text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-200'
+                    ? "border-slate-800 bg-slate-950/60 text-slate-300 hover:text-white hover:border-slate-700 hover:bg-slate-900"
+                    : "border-slate-200 bg-slate-100/80 text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-200"
                 }`}
               >
                 <Mail size={16} className="text-cyan-500" />
@@ -159,9 +170,11 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
 
             {/* Social & Contact Bar */}
             <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-4 sm:gap-6">
-              <span className={`text-xs font-semibold uppercase tracking-wider ${
-                isDark ? 'text-slate-400' : 'text-slate-500'
-              }`}>
+              <span
+                className={`text-xs font-semibold uppercase tracking-wider ${
+                  isDark ? "text-slate-400" : "text-slate-500"
+                }`}
+              >
                 Connect Directly:
               </span>
 
@@ -174,12 +187,15 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium border transition-all duration-200 ${
                     isDark
-                      ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-white hover:border-slate-700 hover:bg-slate-800'
-                      : 'border-slate-200 bg-white text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50 shadow-2xs'
+                      ? "border-slate-800 bg-slate-900/80 text-slate-300 hover:text-white hover:border-slate-700 hover:bg-slate-800"
+                      : "border-slate-200 bg-white text-slate-700 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50 shadow-2xs"
                   }`}
                   aria-label="Farjana Akter Mim GitHub Profile"
                 >
-                  <Github size={15} className="text-slate-400 group-hover:text-white" />
+                  <Github
+                    size={15}
+                    className="text-slate-400 group-hover:text-white"
+                  />
                   <span>GitHub</span>
                 </a>
 
@@ -191,8 +207,8 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium border transition-all duration-200 ${
                     isDark
-                      ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-blue-400 hover:border-slate-700 hover:bg-slate-800'
-                      : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:border-slate-300 hover:bg-slate-50 shadow-2xs'
+                      ? "border-slate-800 bg-slate-900/80 text-slate-300 hover:text-blue-400 hover:border-slate-700 hover:bg-slate-800"
+                      : "border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:border-slate-300 hover:bg-slate-50 shadow-2xs"
                   }`}
                   aria-label="Farjana Akter Mim LinkedIn Profile"
                 >
@@ -206,8 +222,8 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                   href={`mailto:${personalInfo.email}`}
                   className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium border transition-all duration-200 ${
                     isDark
-                      ? 'border-slate-800 bg-slate-900/80 text-slate-300 hover:text-cyan-400 hover:border-slate-700 hover:bg-slate-800'
-                      : 'border-slate-200 bg-white text-slate-700 hover:text-cyan-600 hover:border-slate-300 hover:bg-slate-50 shadow-2xs'
+                      ? "border-slate-800 bg-slate-900/80 text-slate-300 hover:text-cyan-400 hover:border-slate-700 hover:bg-slate-800"
+                      : "border-slate-200 bg-white text-slate-700 hover:text-cyan-600 hover:border-slate-300 hover:bg-slate-50 shadow-2xs"
                   }`}
                   aria-label="Send Email to Farjana Akter Mim"
                 >
@@ -216,23 +232,21 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                 </a>
               </div>
             </div>
-
           </motion.div>
 
           {/* Right Column: Prominent Professional Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-5 w-full flex justify-center"
           >
             <div className="relative mx-auto max-w-sm sm:max-w-md w-full">
-              
               {/* Subtle Ambient Radial Glow */}
               <div className="absolute -inset-2 bg-gradient-to-tr from-blue-600/20 via-indigo-500/20 to-cyan-400/20 rounded-[32px] blur-xl opacity-70 pointer-events-none" />
 
               {/* Floating Badge Top Right */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -241,9 +255,9 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                 <GraduationCap size={14} className="text-blue-400" />
                 <span>CSE Student</span>
               </motion.div>
-              
+
               {/* Floating Badge Bottom Left */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -254,22 +268,26 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
               </motion.div>
 
               {/* Clean Softly Rounded Portrait Container Frame */}
-              <div className={`relative rounded-3xl p-2.5 sm:p-3 border backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden ${
-                isDark 
-                  ? 'bg-slate-950/85 border-slate-800/90 shadow-black/50 hover:border-blue-500/40' 
-                  : 'bg-white border-slate-200 shadow-xl hover:border-blue-300'
-              }`}>
+              <div
+                className={`relative rounded-3xl p-2.5 sm:p-3 border backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden ${
+                  isDark
+                    ? "bg-slate-950/85 border-slate-800/90 shadow-black/50 hover:border-blue-500/40"
+                    : "bg-white border-slate-200 shadow-xl hover:border-blue-300"
+                }`}
+              >
                 {/* Image Viewport with Natural Aspect Ratio & Clean Framing */}
-                <div className={`w-full aspect-[3/4] rounded-2xl overflow-hidden relative flex items-center justify-center ${
-                  isDark ? 'bg-slate-900' : 'bg-slate-100'
-                }`}>
+                <div
+                  className={`w-full aspect-[3/4] rounded-2xl overflow-hidden relative flex items-center justify-center ${
+                    isDark ? "bg-slate-900" : "bg-slate-100"
+                  }`}
+                >
                   <img
                     id="hero-profile-image"
                     src={mimProfilePhoto || "/images/profile.png"}
                     onError={(e) => {
                       const target = e.currentTarget;
-                      if (target.src !== '/images/profile.png') {
-                        target.src = '/images/profile.png';
+                      if (target.src !== "/images/profile.png") {
+                        target.src = "/images/profile.png";
                       }
                     }}
                     alt="Farjana Akter Mim — Computer Science and Engineering student"
@@ -277,7 +295,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                     loading="eager"
                     className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-[1.02]"
                   />
-                  
+
                   {/* Subtle edge overlay gradient for seamless light reflection */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
 
@@ -285,7 +303,9 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between p-2.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-800/90 text-white">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-xs font-semibold font-display">Farjana Akter Mim</span>
+                      <span className="text-xs font-semibold font-display">
+                        Farjana Akter Mim
+                      </span>
                     </div>
                     <span className="text-[10px] font-mono text-blue-400 px-2 py-0.5 rounded-md bg-blue-500/15 border border-blue-500/30">
                       Portfolio
@@ -299,13 +319,13 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                     <CheckCircle2 size={13} className="text-emerald-400" />
                     <span>Computer Science & Eng.</span>
                   </div>
-                  <span className="text-blue-400 font-semibold text-[11px]">2025/2026</span>
+                  <span className="text-blue-400 font-semibold text-[11px]">
+                    2025/2026
+                  </span>
                 </div>
               </div>
-
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
