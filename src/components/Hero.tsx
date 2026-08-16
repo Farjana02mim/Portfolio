@@ -16,6 +16,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import mimProfilePhoto from '../assets/images/profile_portrait_1786891039038.jpg';
 
 interface HeroProps {
   isDark: boolean;
@@ -58,7 +59,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>CSE Student • Open for Internships & Projects</span>
+              <span>CSE Student • Learning • Building • Growing</span>
             </div>
 
             {/* Main Headline */}
@@ -83,7 +84,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
               </h2>
 
               <p className="text-sm sm:text-base font-semibold text-blue-500 dark:text-blue-400">
-                Aspiring Full-Stack Developer | ML & Software Engineering
+                Exploring Web Development, Machine Learning & Software Engineering
               </p>
             </div>
 
@@ -91,7 +92,7 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
             <p className={`text-base sm:text-lg leading-relaxed max-w-2xl font-normal ${
               isDark ? 'text-slate-300' : 'text-slate-600'
             }`}>
-              I'm a CSE student passionate about web development, software engineering, machine learning, and building practical projects.
+              I'm a CSE student who enjoys turning ideas into practical projects. I'm currently building my skills in web development, software engineering, machine learning, and problem solving.
             </p>
 
             {/* Key Skill Highlights Pills */}
@@ -264,11 +265,17 @@ export function Hero({ isDark, onOpenResume }: HeroProps) {
                 }`}>
                   <img
                     id="hero-profile-image"
-                    src="/images/profile.png"
+                    src={mimProfilePhoto || "/images/profile.png"}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== '/images/profile.png') {
+                        target.src = '/images/profile.png';
+                      }
+                    }}
                     alt="Farjana Akter Mim — Computer Science and Engineering student"
                     referrerPolicy="no-referrer"
                     loading="eager"
-                    className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+                    className="w-full h-full object-contain object-center transition-transform duration-500 hover:scale-[1.02]"
                   />
                   
                   {/* Subtle edge overlay gradient for seamless light reflection */}

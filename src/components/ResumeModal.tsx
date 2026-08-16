@@ -11,7 +11,12 @@ import {
   Code2,
   FolderGit2,
   BookOpen,
-  Layers,
+  Brain,
+  Briefcase,
+  Award,
+  Trophy,
+  Medal,
+  Sparkle,
   FileText,
   Info
 } from 'lucide-react';
@@ -137,7 +142,7 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
 
         {/* Modal Scrollable Document Sheet */}
         <div className="p-4 sm:p-6 lg:p-8 max-h-[75vh] overflow-y-auto">
-          <div className="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 shadow-lg border border-slate-200 text-left space-y-7 select-text">
+          <div className="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 shadow-lg border border-slate-200 text-left space-y-6 select-text">
             
             {/* Header */}
             <div className="border-b border-slate-200 pb-5 space-y-2">
@@ -147,29 +152,41 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               <p className="text-sm font-semibold text-blue-700">
                 {resumeData.title}
               </p>
-              <p className="text-xs text-slate-700 leading-relaxed pt-1">
-                "{resumeData.summary}"
-              </p>
 
               <div className="pt-2 flex flex-wrap gap-y-1.5 gap-x-4 text-xs font-mono text-slate-600">
                 <a href={`mailto:${emailDisplay}`} className="hover:text-blue-700 flex items-center gap-1">
                   <Mail size={12} className="text-blue-600" />
-                  <span>{emailDisplay}</span>
+                  <span>Email: {emailDisplay}</span>
                 </a>
                 <span>•</span>
                 <a href={resumeData.github} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 flex items-center gap-1">
                   <Github size={12} className="text-slate-800" />
-                  <span>github.com/{resumeData.githubUsername}</span>
+                  <span>GitHub: github.com/{resumeData.githubUsername}</span>
                 </a>
                 <span>•</span>
                 <a href={resumeData.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 flex items-center gap-1">
                   <Linkedin size={12} className="text-blue-700" />
-                  <span>linkedin.com/in/{resumeData.linkedinUsername}</span>
+                  <span>LinkedIn: linkedin.com/in/{resumeData.linkedinUsername}</span>
                 </a>
               </div>
             </div>
 
-            {/* Education */}
+            {/* 1. Academic Profile */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                <Sparkle size={14} className="text-blue-700" />
+                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
+                  Academic Profile
+                </h2>
+              </div>
+              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {resumeData.summary}
+                </p>
+              </div>
+            </div>
+
+            {/* 2. Education */}
             <div className="space-y-2">
               <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                 <GraduationCap size={14} className="text-blue-700" />
@@ -177,16 +194,52 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
                   Education
                 </h2>
               </div>
-              <div className="space-y-0.5 text-xs sm:text-sm">
-                <div className="flex justify-between font-bold text-slate-900">
+              <div className="p-3.5 rounded-xl bg-slate-50/70 border border-slate-200/80 space-y-1 text-xs sm:text-sm">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 font-bold text-slate-900">
                   <span>{resumeData.education.degree}</span>
-                  <span className="font-mono text-xs text-slate-500 font-medium">{resumeData.education.period}</span>
+                  <span className="font-mono text-xs text-slate-600 font-medium">Duration: {resumeData.education.period}</span>
                 </div>
-                <p className="text-xs text-slate-600">{resumeData.education.institution}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-slate-700">
+                  <span className="text-xs font-medium">University: {resumeData.education.institution}</span>
+                  <span className="font-bold text-blue-900 bg-blue-100/80 px-2 py-0.5 rounded border border-blue-200 text-xs font-mono">
+                    CGPA: {resumeData.education.cgpa}
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Technical Skills */}
+            {/* 3. Academic Achievements */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                <Trophy size={14} className="text-blue-700" />
+                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
+                  Academic Achievements
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {resumeData.academicAchievements.map((item) => (
+                  <div key={item.year} className="p-3 rounded-xl bg-amber-50/50 border border-amber-200/80 space-y-1 text-xs">
+                    <div className="flex items-center justify-between gap-1 font-display">
+                      <div className="flex items-center gap-1.5 font-bold text-slate-900">
+                        <Medal size={13} className="text-amber-600 shrink-0" />
+                        <span>{item.year}</span>
+                      </div>
+                      <span className="text-[10px] font-mono font-semibold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-200">
+                        {item.position}
+                      </span>
+                    </div>
+                    <p className="text-xs font-medium text-slate-800">
+                      {item.award}
+                    </p>
+                    <p className="text-[11px] text-slate-600 leading-relaxed">
+                      "{item.description}"
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 4. Technical Skills */}
             <div className="space-y-2">
               <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                 <Code2 size={14} className="text-blue-700" />
@@ -211,27 +264,18 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
                   <span className="font-bold text-slate-900">Machine Learning & Data: </span>
                   <span>{resumeData.skills.machineLearning.join(', ')}</span>
                 </div>
-                <div className="sm:col-span-2">
+                <div>
                   <span className="font-bold text-slate-900">Tools: </span>
                   <span>{resumeData.skills.tools.join(', ')}</span>
+                </div>
+                <div>
+                  <span className="font-bold text-slate-900">Other: </span>
+                  <span>{resumeData.skills.otherAreas.join(', ')}</span>
                 </div>
               </div>
             </div>
 
-            {/* Other Areas */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
-                <Layers size={14} className="text-blue-700" />
-                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
-                  Other Areas
-                </h2>
-              </div>
-              <p className="text-xs text-slate-800">
-                {resumeData.skills.otherAreas.join(' • ')}
-              </p>
-            </div>
-
-            {/* Projects */}
+            {/* 5. Projects */}
             <div className="space-y-3">
               <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                 <FolderGit2 size={14} className="text-blue-700" />
@@ -239,25 +283,48 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
                   Projects
                 </h2>
               </div>
-              <div className="space-y-3">
-                {resumeData.projects.map((proj) => (
-                  <div key={proj.name} className="text-xs space-y-0.5">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-1.5">
+              <div className="space-y-3 divide-y divide-slate-100">
+                {resumeData.projects.map((proj, idx) => (
+                  <div key={proj.name} className={`text-xs space-y-1 ${idx !== 0 ? 'pt-2.5' : ''}`}>
+                    <div className="flex justify-between items-center flex-wrap gap-1">
+                      <div className="flex items-center gap-2">
                         <span className="font-bold text-slate-900">{proj.name}</span>
-                        {proj.githubUrl && (
+                        {proj.githubClientUrl && proj.githubServerUrl ? (
+                          <div className="inline-flex items-center gap-1.5">
+                            <a
+                              href={proj.githubClientUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-700 hover:text-blue-900 font-mono text-[10px]"
+                            >
+                              [Frontend Repo]
+                            </a>
+                            <a
+                              href={proj.githubServerUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-700 hover:text-blue-900 font-mono text-[10px]"
+                            >
+                              [Backend Repo]
+                            </a>
+                          </div>
+                        ) : proj.githubUrl ? (
                           <a
                             href={proj.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-700 hover:text-blue-900 font-mono text-[10px]"
                           >
-                            [GitHub]
+                            [GitHub Repo]
                           </a>
+                        ) : (
+                          <span className="text-slate-500 font-mono text-[10px]">
+                            [Repository Coming Soon]
+                          </span>
                         )}
                       </div>
                       <span className="text-[10px] font-mono text-slate-500">
-                        {proj.isComingSoon ? 'Live Demo: Coming Soon' : 'Active'}
+                        {proj.liveUrl ? 'Live Demo Available' : 'Live Demo: Coming Soon'}
                       </span>
                     </div>
                     <p className="text-slate-600">{proj.description}</p>
@@ -270,12 +337,12 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               </div>
             </div>
 
-            {/* Coursework */}
+            {/* 6. Relevant Coursework */}
             <div className="space-y-2">
               <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                 <BookOpen size={14} className="text-blue-700" />
                 <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
-                  Coursework
+                  Relevant Coursework
                 </h2>
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -290,9 +357,51 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               </div>
             </div>
 
+            {/* 7. Certifications (Only rendered if verified certifications exist) */}
+            {resumeData.certifications && resumeData.certifications.length > 0 && (
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                  <Award size={14} className="text-blue-700" />
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
+                    Certifications
+                  </h2>
+                </div>
+                <div className="space-y-1">
+                  {resumeData.certifications.map((cert) => (
+                    <div key={cert.name} className="p-2 rounded-xl bg-slate-50 border border-slate-200/80 text-xs flex justify-between items-center">
+                      <span className="font-semibold text-slate-900">{cert.name}</span>
+                      {cert.issuer && <span className="text-slate-500 font-mono">{cert.issuer}</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 8. Currently Learning */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                <Brain size={14} className="text-blue-700" />
+                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
+                  Currently Learning
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {resumeData.currentlyLearning.map((item) => (
+                  <span
+                    key={item}
+                    className="px-2.5 py-1 rounded text-[11px] font-medium bg-blue-50 text-blue-800 border border-blue-200 flex items-center gap-1"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                    <span>{item}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   );
 }
+

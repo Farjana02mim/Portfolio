@@ -11,6 +11,7 @@ import {
   Layers
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import mimProfilePhoto from '../assets/images/profile_portrait_1786891039038.jpg';
 
 interface AboutProps {
   isDark: boolean;
@@ -105,7 +106,13 @@ export function About({ isDark }: AboutProps) {
                 {/* Profile Image Thumbnail */}
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl p-[1.5px] bg-gradient-to-tr from-blue-500 to-indigo-500 shadow-md shadow-blue-500/15 overflow-hidden flex-shrink-0">
                   <img
-                    src="/images/profile.png"
+                    src={mimProfilePhoto || "/images/profile.png"}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== '/images/profile.png') {
+                        target.src = '/images/profile.png';
+                      }
+                    }}
                     alt="Farjana Akter Mim — Computer Science and Engineering student"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top rounded-[14px]"

@@ -8,8 +8,10 @@ import {
   Edit3, 
   School,
   Sparkles,
-  Check,
-  Award
+  Award,
+  Trophy,
+  Medal,
+  Star
 } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
 
@@ -47,12 +49,12 @@ export function Education({ isDark }: EducationProps) {
             Education
           </h2>
           <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-            Undergraduate studies in Computer Science and Engineering with foundational and specialized coursework.
+            Undergraduate studies in Computer Science and Engineering with foundational coursework and academic achievements.
           </p>
         </motion.div>
 
         {/* Education Main Card */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 15 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -72,9 +74,12 @@ export function Education({ isDark }: EducationProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="px-3 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
                       {educationData.status}
+                    </span>
+                    <span className="px-3 py-0.5 rounded-full text-xs font-mono font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
+                      CGPA: {educationData.cgpa}
                     </span>
                   </div>
 
@@ -83,7 +88,7 @@ export function Education({ isDark }: EducationProps) {
                     {educationData.degree}
                   </h3>
 
-                  {/* University Name (Editable Placeholder) */}
+                  {/* University Name */}
                   <div className="flex items-center gap-2 pt-0.5">
                     {isEditing ? (
                       <div className="flex flex-wrap items-center gap-2">
@@ -99,7 +104,7 @@ export function Education({ isDark }: EducationProps) {
                           value={durationPeriod}
                           onChange={(e) => setDurationPeriod(e.target.value)}
                           className="px-3 py-1 text-xs rounded-xl border border-blue-500 bg-slate-900 text-white focus:outline-none"
-                          placeholder="e.g. 2022 – 2026"
+                          placeholder="e.g. [Start Year – Expected Graduation Year]"
                         />
                         <button
                           onClick={() => setIsEditing(false)}
@@ -110,17 +115,17 @@ export function Education({ isDark }: EducationProps) {
                       </div>
                     ) : (
                       <div className="flex items-center gap-2">
-                        <span className={`text-sm sm:text-base font-medium ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                        <span className={`text-sm sm:text-base font-semibold ${isDark ? 'text-blue-300' : 'text-blue-700'}`}>
                           {institutionName}
                         </span>
                         <button
                           onClick={() => setIsEditing(true)}
                           className="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-                          title="Click to customize university or duration placeholders"
-                          aria-label="Edit university or duration placeholders"
+                          title="Click to customize duration placeholder if needed"
+                          aria-label="Edit duration placeholder"
                         >
                           <Edit3 size={12} />
-                          <span className="text-[10px] font-mono">(Edit Details)</span>
+                          <span className="text-[10px] font-mono">(Edit Period)</span>
                         </button>
                       </div>
                     )}
@@ -140,11 +145,71 @@ export function Education({ isDark }: EducationProps) {
               </div>
             </div>
 
-            {/* Relevant Coursework Area */}
+            {/* Academic Achievements Sub-Section */}
             <div className="pt-8 space-y-4">
               <div className="flex items-center gap-2">
+                <Trophy size={18} className="text-amber-400" />
+                <h4 className="text-sm font-bold uppercase tracking-wider font-display text-slate-900 dark:text-slate-100">
+                  Academic Achievements
+                </h4>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {educationData.academicAchievements?.map((achievement, index) => (
+                  <motion.div
+                    key={achievement.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: index * 0.1 }}
+                    whileHover={{ y: -2 }}
+                    className={`p-5 rounded-2xl border transition-all ${
+                      isDark
+                        ? 'bg-slate-900/80 border-slate-800/90 hover:border-amber-500/40 hover:bg-slate-900 shadow-md shadow-black/20'
+                        : 'bg-gradient-to-br from-amber-50/50 to-white border-amber-200/70 hover:border-amber-300 shadow-xs'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3 mb-2.5">
+                      <div className="flex items-center gap-2.5">
+                        <div className={`p-2 rounded-xl ${
+                          isDark ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-amber-100 text-amber-700 border border-amber-200'
+                        }`}>
+                          <Medal size={16} />
+                        </div>
+                        <div>
+                          <h5 className="text-sm font-bold font-display">
+                            {achievement.title}
+                          </h5>
+                          <span className={`text-[11px] font-mono ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                            Position: {achievement.position}
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className={`px-2.5 py-1 rounded-full text-xs font-semibold font-mono border whitespace-nowrap ${
+                        isDark 
+                          ? 'bg-amber-500/10 text-amber-300 border-amber-500/30' 
+                          : 'bg-amber-50 text-amber-800 border-amber-200'
+                      }`}>
+                        Award: {achievement.award}
+                      </span>
+                    </div>
+
+                    <p className={`text-xs sm:text-sm leading-relaxed ${
+                      isDark ? 'text-slate-300' : 'text-slate-700'
+                    }`}>
+                      "{achievement.description}"
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Relevant Coursework Area */}
+            <div className="pt-8 mt-8 border-t border-slate-800/80 space-y-4">
+              <div className="flex items-center gap-2">
                 <BookOpen size={17} className="text-blue-400" />
-                <h4 className="text-xs font-bold uppercase tracking-wider font-mono text-slate-300">
+                <h4 className="text-xs font-bold uppercase tracking-wider font-mono text-slate-400">
                   Relevant Coursework
                 </h4>
               </div>
@@ -155,7 +220,7 @@ export function Education({ isDark }: EducationProps) {
                     key={course}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.15 }}
-                    className={`p-3.5 rounded-2xl border flex items-center gap-2.5 transition-colors ${
+                    className={`p-3 rounded-2xl border flex items-center gap-2.5 transition-colors ${
                       isDark
                         ? 'bg-slate-900/70 border-slate-800/80 hover:border-blue-500/40 hover:bg-slate-900'
                         : 'bg-slate-50 border-slate-200/80 hover:bg-white hover:border-slate-300 shadow-2xs'

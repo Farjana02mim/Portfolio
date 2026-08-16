@@ -50,10 +50,19 @@ export interface EducationItem {
   field: string;
   institution: string;
   period: string;
+  cgpa?: string;
   location?: string;
   status: string;
   coursework: string[];
   highlights: string[];
+  academicAchievements?: {
+    id: string;
+    title: string;
+    year: string;
+    position: string;
+    award: string;
+    description: string;
+  }[];
 }
 
 export interface CertificationItem {

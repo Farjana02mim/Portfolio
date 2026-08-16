@@ -158,14 +158,14 @@ export function Navbar({ activeSection, isDark, onToggleTheme, onOpenResume }: N
               <span>Resume</span>
             </button>
 
-            {/* Contact / Hire Button */}
+            {/* Contact Button */}
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
               className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white shadow-md shadow-blue-600/25 hover:shadow-blue-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
               <Send size={13} />
-              <span>Hire Me</span>
+              <span>Contact Me</span>
             </a>
 
             {/* Mobile Hamburger Button */}

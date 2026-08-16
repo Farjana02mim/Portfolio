@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   FileText, 
@@ -15,11 +15,14 @@ import {
   Linkedin,
   Clock,
   Layers,
-  Wrench,
-  Cpu,
   Brain,
   Info,
-  Maximize2
+  Maximize2,
+  Briefcase,
+  Award,
+  Trophy,
+  Medal,
+  Sparkle
 } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
 
@@ -50,7 +53,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
       link.click();
       document.body.removeChild(link);
     } else {
-      setNotice('Resume Coming Soon — Please explore the complete digital preview below or connect directly.');
+      setNotice('Resume Coming Soon — Explore the full digital CV preview below or open fullscreen.');
       setTimeout(() => setNotice(null), 4500);
     }
   };
@@ -76,7 +79,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-14 space-y-3"
+          className="text-center max-w-3xl mx-auto mb-12 space-y-3"
         >
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-500/10 text-blue-400 border border-blue-500/30 backdrop-blur-md">
             <FileText size={13} className="text-blue-400" />
@@ -86,7 +89,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
             Resume
           </h2>
           <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-            A quick overview of my education, technical skills, projects, and learning journey.
+            A concise overview of my education, technical skills, projects, and learning journey.
           </p>
         </motion.div>
 
@@ -108,8 +111,8 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                 <FileText size={20} />
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-sm font-bold font-display">Farjana_Akter_Mim_Resume</h3>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-sm font-bold font-display">Farjana_Akter_Mim_Resume.pdf</h3>
                   {!resumeData.hasPdf ? (
                     <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-400 border border-amber-500/30">
                       Resume Coming Soon
@@ -120,8 +123,8 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                     </span>
                   )}
                 </div>
-                <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
-                  {resumeData.hasPdf ? 'Ready for preview and download' : 'Digital interactive document preview active'}
+                <p className={`text-xs mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+                  {resumeData.hasPdf ? 'Ready for preview and download' : 'Digital CV preview active below'}
                 </p>
               </div>
             </div>
@@ -191,7 +194,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
                 <span className="ml-2 font-medium hidden sm:inline text-slate-400">
-                  resume-preview-document.pdf
+                  resume-preview.pdf
                 </span>
               </div>
 
@@ -202,19 +205,19 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                   className="flex items-center gap-1 hover:text-blue-400 transition-colors cursor-pointer text-[11px]"
                 >
                   <Maximize2 size={12} />
-                  <span>Fullscreen</span>
+                  <span>Fullscreen View</span>
                 </button>
               </div>
             </div>
 
             {/* Crisp Light Document Paper Surface */}
             <article 
-              className="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-inner border border-slate-200/90 text-left space-y-8 select-text"
+              className="bg-white text-slate-900 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-inner border border-slate-200/90 text-left space-y-7 select-text"
               aria-label="Developer Resume Preview for Farjana Akter Mim"
             >
               
               {/* HEADER SECTION */}
-              <header className="border-b border-slate-200 pb-6 space-y-3">
+              <header className="border-b border-slate-200 pb-5 space-y-2.5">
                 <div>
                   <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display uppercase">
                     {resumeData.name}
@@ -224,20 +227,15 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                   </p>
                 </div>
 
-                {/* Short Professional Summary */}
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-3xl">
-                  "{resumeData.summary}"
-                </p>
-
                 {/* Contact Strip */}
-                <div className="pt-2 flex flex-wrap gap-y-2 gap-x-5 text-xs text-slate-600 font-mono">
+                <div className="pt-1 flex flex-wrap gap-y-2 gap-x-5 text-xs text-slate-600 font-mono">
                   <a
                     href={`mailto:${emailDisplay}`}
                     className="inline-flex items-center gap-1.5 hover:text-blue-700 transition-colors"
                     aria-label={`Email ${emailDisplay}`}
                   >
                     <Mail size={13} className="text-blue-600" />
-                    <span>{emailDisplay}</span>
+                    <span>Email: {emailDisplay}</span>
                   </a>
 
                   <a
@@ -245,10 +243,11 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 hover:text-blue-700 transition-colors"
-                    aria-label="Farjana Akter Mim on GitHub"
+                    aria-label="Farjana Akter Mim on GitHub (opens in new tab)"
                   >
                     <Github size={13} className="text-slate-800" />
-                    <span>github.com/{resumeData.githubUsername}</span>
+                    <span>GitHub: github.com/{resumeData.githubUsername}</span>
+                    <ExternalLink size={10} className="text-slate-400" />
                   </a>
 
                   <a
@@ -256,48 +255,106 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 hover:text-blue-700 transition-colors"
-                    aria-label="Farjana Akter Mim on LinkedIn"
+                    aria-label="Farjana Akter Mim on LinkedIn (opens in new tab)"
                   >
                     <Linkedin size={13} className="text-blue-700" />
-                    <span>linkedin.com/in/{resumeData.linkedinUsername}</span>
+                    <span>LinkedIn: linkedin.com/in/{resumeData.linkedinUsername}</span>
+                    <ExternalLink size={10} className="text-slate-400" />
                   </a>
                 </div>
               </header>
 
-              {/* 1. EDUCATION */}
-              <section className="space-y-3" aria-labelledby="resume-education-heading">
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-1.5">
+              {/* 1. ACADEMIC PROFILE */}
+              <section className="space-y-2" aria-labelledby="resume-profile-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                  <Sparkle size={14} className="text-blue-700" />
+                  <h2 id="resume-profile-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
+                    Academic Profile
+                  </h2>
+                </div>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    {resumeData.summary}
+                  </p>
+                </div>
+              </section>
+
+              {/* 2. EDUCATION */}
+              <section className="space-y-2.5" aria-labelledby="resume-education-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                   <GraduationCap size={15} className="text-blue-700" />
                   <h2 id="resume-education-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
                     Education
                   </h2>
                 </div>
 
-                <div className="space-y-1">
+                <div className="p-4 rounded-xl bg-slate-50/70 border border-slate-200/80 space-y-1.5">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 text-xs sm:text-sm">
                     <span className="font-bold text-slate-900">
                       {resumeData.education.degree}
                     </span>
-                    <span className="font-mono text-xs text-slate-500 font-medium">
-                      {resumeData.education.period}
+                    <span className="font-mono text-xs text-slate-600 font-medium">
+                      Duration: {resumeData.education.period}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 font-medium">
-                    {resumeData.education.institution}
-                  </p>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs sm:text-sm text-slate-700 font-medium">
+                    <span>University: {resumeData.education.institution}</span>
+                    <span className="font-bold text-blue-900 bg-blue-100/80 px-2.5 py-0.5 rounded border border-blue-200 text-xs font-mono">
+                      CGPA: {resumeData.education.cgpa}
+                    </span>
+                  </div>
                 </div>
               </section>
 
-              {/* 2. TECHNICAL SKILLS */}
-              <section className="space-y-3" aria-labelledby="resume-skills-heading">
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-1.5">
+              {/* 3. ACADEMIC ACHIEVEMENTS */}
+              <section className="space-y-2.5" aria-labelledby="resume-achievements-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                  <Trophy size={15} className="text-blue-700" />
+                  <h2 id="resume-achievements-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
+                    Academic Achievements
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {resumeData.academicAchievements.map((item, idx) => (
+                    <motion.div
+                      key={item.year}
+                      initial={{ opacity: 0, y: 8 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: idx * 0.1 }}
+                      className="p-3.5 rounded-xl bg-amber-50/50 border border-amber-200/80 space-y-1 text-xs sm:text-sm"
+                    >
+                      <div className="flex items-center justify-between gap-2 font-display">
+                        <div className="flex items-center gap-1.5 font-bold text-slate-900">
+                          <Medal size={14} className="text-amber-600 shrink-0" />
+                          <span>{item.year}</span>
+                        </div>
+                        <span className="text-[11px] font-mono font-semibold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-200">
+                          {item.position}
+                        </span>
+                      </div>
+                      <p className="text-xs font-medium text-slate-800">
+                        {item.award}
+                      </p>
+                      <p className="text-[11px] text-slate-600 leading-relaxed pt-0.5">
+                        "{item.description}"
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 4. TECHNICAL SKILLS */}
+              <section className="space-y-2.5" aria-labelledby="resume-skills-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                   <Code2 size={15} className="text-blue-700" />
                   <h2 id="resume-skills-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
                     Technical Skills
                   </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-xs sm:text-sm text-slate-800">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-800">
                   <div>
                     <span className="font-bold text-slate-900">Programming: </span>
                     <span>{resumeData.skills.programming.join(', ')}</span>
@@ -314,57 +371,76 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                     <span className="font-bold text-slate-900">Machine Learning & Data: </span>
                     <span>{resumeData.skills.machineLearning.join(', ')}</span>
                   </div>
-                  <div className="sm:col-span-2">
+                  <div>
                     <span className="font-bold text-slate-900">Tools: </span>
                     <span>{resumeData.skills.tools.join(', ')}</span>
+                  </div>
+                  <div>
+                    <span className="font-bold text-slate-900">Other: </span>
+                    <span>{resumeData.skills.otherAreas.join(', ')}</span>
                   </div>
                 </div>
               </section>
 
-              {/* 3. OTHER AREAS */}
-              <section className="space-y-3" aria-labelledby="resume-other-heading">
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-1.5">
-                  <Layers size={15} className="text-blue-700" />
-                  <h2 id="resume-other-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
-                    Other Areas
-                  </h2>
-                </div>
-
-                <p className="text-xs sm:text-sm text-slate-800">
-                  {resumeData.skills.otherAreas.join(' • ')}
-                </p>
-              </section>
-
-              {/* 4. PROJECTS */}
-              <section className="space-y-4" aria-labelledby="resume-projects-heading">
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-1.5">
+              {/* 5. PROJECTS */}
+              <section className="space-y-3.5" aria-labelledby="resume-projects-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                   <FolderGit2 size={15} className="text-blue-700" />
                   <h2 id="resume-projects-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
                     Projects
                   </h2>
                 </div>
 
-                <div className="space-y-4">
-                  {resumeData.projects.map((proj) => (
-                    <div key={proj.name} className="space-y-1 text-xs sm:text-sm">
+                <div className="space-y-3.5 divide-y divide-slate-100">
+                  {resumeData.projects.map((proj, idx) => (
+                    <div key={proj.name} className={`space-y-1 text-xs sm:text-sm ${idx !== 0 ? 'pt-3' : ''}`}>
                       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 flex-wrap">
                           <span className="font-bold text-slate-900">{proj.name}</span>
-                          {proj.githubUrl && (
+                          
+                          {proj.githubClientUrl && proj.githubServerUrl ? (
+                            <div className="inline-flex items-center gap-2">
+                              <a
+                                href={proj.githubClientUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-700 hover:text-blue-900 inline-flex items-center gap-0.5 font-mono text-[11px] font-semibold"
+                                aria-label={`View ${proj.name} Frontend repository on GitHub (opens in new tab)`}
+                              >
+                                <span>[Frontend Repo]</span>
+                                <ExternalLink size={10} />
+                              </a>
+                              <a
+                                href={proj.githubServerUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-700 hover:text-blue-900 inline-flex items-center gap-0.5 font-mono text-[11px] font-semibold"
+                                aria-label={`View ${proj.name} Backend repository on GitHub (opens in new tab)`}
+                              >
+                                <span>[Backend Repo]</span>
+                                <ExternalLink size={10} />
+                              </a>
+                            </div>
+                          ) : proj.githubUrl ? (
                             <a
                               href={proj.githubUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-blue-700 hover:text-blue-900 inline-flex items-center gap-0.5 font-mono text-[11px]"
-                              aria-label={`View ${proj.name} source code on GitHub`}
+                              className="text-blue-700 hover:text-blue-900 inline-flex items-center gap-0.5 font-mono text-[11px] font-semibold"
+                              aria-label={`View ${proj.name} source code on GitHub (opens in new tab)`}
                             >
-                              <span>[GitHub]</span>
+                              <span>[GitHub Repo]</span>
                               <ExternalLink size={10} />
                             </a>
+                          ) : (
+                            <span className="text-slate-500 font-mono text-[11px]">
+                              [Repository Coming Soon]
+                            </span>
                           )}
                         </div>
-                        <span className="text-[11px] font-mono text-slate-500">
-                          {proj.isComingSoon ? 'Live Demo: Coming Soon' : 'Active'}
+
+                        <span className="text-[11px] font-mono text-slate-500 shrink-0">
+                          {proj.liveUrl ? 'Live Demo Available' : 'Live Demo: Coming Soon'}
                         </span>
                       </div>
 
@@ -381,12 +457,12 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                 </div>
               </section>
 
-              {/* 5. COURSEWORK */}
-              <section className="space-y-3" aria-labelledby="resume-coursework-heading">
-                <div className="flex items-center gap-2 border-b border-slate-200 pb-1.5">
+              {/* 6. RELEVANT COURSEWORK */}
+              <section className="space-y-2.5" aria-labelledby="resume-coursework-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                   <BookOpen size={15} className="text-blue-700" />
                   <h2 id="resume-coursework-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
-                    Coursework
+                    Relevant Coursework
                   </h2>
                 </div>
 
@@ -394,9 +470,51 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                   {resumeData.coursework.map((course) => (
                     <span
                       key={course}
-                      className="px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-medium bg-slate-100 text-slate-800 border border-slate-200"
+                      className="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 text-slate-800 border border-slate-200"
                     >
                       {course}
+                    </span>
+                  ))}
+                </div>
+              </section>
+
+              {/* 7. CERTIFICATIONS (Only rendered if verified certifications exist) */}
+              {resumeData.certifications && resumeData.certifications.length > 0 && (
+                <section className="space-y-2" aria-labelledby="resume-certifications-heading">
+                  <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                    <Award size={14} className="text-blue-700" />
+                    <h2 id="resume-certifications-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
+                      Certifications
+                    </h2>
+                  </div>
+                  <div className="space-y-1.5">
+                    {resumeData.certifications.map((cert) => (
+                      <div key={cert.name} className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs flex justify-between items-center">
+                        <span className="font-semibold text-slate-900">{cert.name}</span>
+                        {cert.issuer && <span className="text-slate-500 font-mono">{cert.issuer}</span>}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* 8. CURRENTLY LEARNING */}
+              <section className="space-y-2.5" aria-labelledby="resume-learning-heading">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                  <Brain size={15} className="text-blue-700" />
+                  <h2 id="resume-learning-heading" className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 font-display">
+                    Currently Learning
+                  </h2>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {resumeData.currentlyLearning.map((item) => (
+                    <span
+                      key={item}
+                      className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-blue-50 text-blue-800 border border-blue-200 flex items-center gap-1"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                      <span>{item}</span>
                     </span>
                   ))}
                 </div>
@@ -407,13 +525,13 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
           </div>
         </motion.div>
 
-        {/* FINAL RESUME CTA (Bottom of Resume Section) */}
+        {/* FINAL RESUME CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.5 }}
-          className={`mt-14 sm:mt-16 p-6 sm:p-8 rounded-3xl border backdrop-blur-xl text-center max-w-3xl mx-auto space-y-4 ${
+          className={`mt-12 p-6 sm:p-8 rounded-3xl border backdrop-blur-xl text-center max-w-3xl mx-auto space-y-4 ${
             isDark 
               ? 'bg-slate-950/80 border-slate-800/90 shadow-xl shadow-black/30' 
               : 'bg-white border-slate-200 shadow-lg'
@@ -436,6 +554,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <button
+              id="resume-bottom-view-btn"
               onClick={handleViewResume}
               aria-label="View Resume"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-md shadow-blue-600/25 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
@@ -445,10 +564,11 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
             </button>
 
             <a
+              id="resume-bottom-linkedin-btn"
               href={resumeData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Connect with Farjana Akter Mim on LinkedIn"
+              aria-label="Connect with Farjana Akter Mim on LinkedIn (opens in new tab)"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm border transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                 isDark
                   ? 'border-slate-800 bg-slate-900 text-slate-200 hover:bg-slate-800 hover:text-white'
@@ -466,3 +586,4 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
     </section>
   );
 }
+

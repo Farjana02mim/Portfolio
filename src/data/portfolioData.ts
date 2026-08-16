@@ -23,7 +23,7 @@ export const personalInfo = {
   ],
   email: 'farjanaaktermim330@gmail.com',
   github: 'https://github.com/Farjana02mim',
-  linkedin: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636b',
+  linkedin: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636',
   location: 'Bangladesh',
   status: 'CSE Student • Open for Internships & Projects',
   resumeAvailable: true,
@@ -146,9 +146,9 @@ export const projects: Project[] = [
     title: 'Zap Shift',
     category: 'web',
     categoryLabel: 'Web Development',
-    description: 'A full-stack web application built to practice modern frontend and backend development, authentication, API integration, database management, and responsive UI design.',
-    longDescription: 'A full-stack web application built to practice modern frontend and backend development, authentication, API integration, database management, and responsive UI design.',
-    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Firebase'],
+    description: 'Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.',
+    longDescription: 'A full-stack parcel logistics web application built to practice modern frontend and backend development, user authentication, RESTful API design, MongoDB integration, and responsive Tailwind UI styling.',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'REST API'],
     githubClient: 'https://github.com/Farjana02mim/zap-shift-client',
     githubServer: 'https://github.com/Farjana02mim/zap-shift-server',
     github: 'https://github.com/Farjana02mim/zap-shift-client',
@@ -157,12 +157,34 @@ export const projects: Project[] = [
     badge: 'Featured Project'
   },
   {
+    id: 'rainfall-prediction',
+    title: 'Rainfall Prediction Classifier',
+    category: 'ml',
+    categoryLabel: 'Machine Learning',
+    description: 'Explored supervised classification workflows, weather data preprocessing, and model evaluation techniques using Scikit-learn.',
+    longDescription: 'A machine learning coursework project focused on predictive modeling, exploratory data analysis, feature engineering, and classification metrics using Scikit-learn.',
+    technologies: [
+      'Python',
+      'Pandas',
+      'NumPy',
+      'Scikit-learn',
+      'Logistic Regression',
+      'Random Forest',
+      'Data Preprocessing',
+      'Model Evaluation'
+    ],
+    github: undefined, // Public repo not available yet -> Shows "Repository Coming Soon"
+    liveDemo: undefined,
+    featured: false,
+    badge: 'Coursework Project'
+  },
+  {
     id: 'computer-graphics-project',
     title: 'Computer Graphics Project',
     category: 'graphics',
     categoryLabel: 'Computer Graphics',
-    description: 'An academic computer graphics project focused on implementing and exploring fundamental computer graphics concepts.',
-    longDescription: 'An academic computer graphics project focused on implementing and exploring fundamental computer graphics concepts.',
+    description: 'Developed while learning fundamental computer graphics concepts, 2D/3D transformations, and interactive rendering algorithms in OpenGL.',
+    longDescription: 'An academic computer graphics project focused on implementing and exploring fundamental computer graphics concepts, rendering pipelines, transformations, and geometric algorithms.',
     technologies: ['C++', 'OpenGL', 'Computer Graphics', 'Graphics Algorithms'],
     github: 'https://github.com/Farjana02mim/Computer_Graphics_Project',
     liveDemo: undefined,
@@ -170,25 +192,12 @@ export const projects: Project[] = [
     badge: 'Academic Project'
   },
   {
-    id: 'panda-project',
-    title: 'Panda Project',
-    category: 'academic',
-    categoryLabel: 'Academic Projects',
-    description: 'An academic programming project developed as part of my learning journey and practical software development experience.',
-    longDescription: 'An academic programming project developed as part of my learning journey and practical software development experience.',
-    technologies: ['Python', 'Pandas', 'Data Analysis', 'Academic Project'],
-    github: 'https://github.com/Farjana02mim/Panda_Project02',
-    liveDemo: undefined,
-    featured: false,
-    badge: 'Academic Project'
-  },
-  {
     id: 'university-management',
     title: 'University Management System',
-    category: 'academic',
-    categoryLabel: 'Academic Projects',
-    description: 'An academic project focused on implementing a university management system and applying programming and software development concepts.',
-    longDescription: 'An academic project focused on implementing a university management system and applying programming and software development concepts.',
+    category: 'other',
+    categoryLabel: 'Other',
+    description: 'Built as a hands-on project to practice object-oriented programming, data structures, and file handling in C++.',
+    longDescription: 'An academic project focused on implementing a university management system and applying core programming, class architecture, and file storage concepts.',
     technologies: ['C++', 'OOP', 'Data Structures', 'File Handling'],
     github: 'https://github.com/Farjana02mim/University_Management_System',
     liveDemo: undefined,
@@ -200,8 +209,8 @@ export const projects: Project[] = [
     title: 'Basics of Computer Graphics',
     category: 'graphics',
     categoryLabel: 'Computer Graphics',
-    description: 'A collection of fundamental computer graphics work created while learning core graphics programming concepts.',
-    longDescription: 'A collection of fundamental computer graphics work created while learning core graphics programming concepts.',
+    description: 'Explored core graphics algorithms including rasterization, line-drawing, clipping, and geometric rendering in C++.',
+    longDescription: 'A collection of fundamental computer graphics work created while learning core graphics programming concepts, coordinate mapping, and rasterization algorithms.',
     technologies: ['C++', 'Computer Graphics', 'Rasterization', 'Algorithms'],
     github: 'https://github.com/Farjana02mim/Basics_of_CG',
     liveDemo: undefined,
@@ -209,17 +218,17 @@ export const projects: Project[] = [
     badge: 'Learning Repository'
   },
   {
-    id: 'rainfall-prediction',
-    title: 'Rainfall Prediction Classifier',
-    category: 'ml',
-    categoryLabel: 'Machine Learning',
-    description: 'A machine learning coursework project focused on predictive modeling, exploratory data analysis, and classification metrics using Scikit-learn.',
-    longDescription: 'A machine learning coursework project focused on predictive modeling, exploratory data analysis, and classification metrics using Scikit-learn.',
-    technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Machine Learning'],
-    github: 'https://github.com/Farjana02mim',
+    id: 'panda-project',
+    title: 'Panda Project',
+    category: 'other',
+    categoryLabel: 'Other',
+    description: 'Developed while exploring data analysis, pandas processing, and statistical methods in Python as part of my practical learning journey.',
+    longDescription: 'An academic programming project developed as part of my learning journey to explore data manipulation, tabular structures, and data analysis using Python.',
+    technologies: ['Python', 'Pandas', 'Data Analysis', 'Matplotlib'],
+    github: 'https://github.com/Farjana02mim/Panda_Project02',
     liveDemo: undefined,
     featured: false,
-    badge: 'Coursework Project'
+    badge: 'Learning Repository'
   }
 ];
 
@@ -329,12 +338,13 @@ export const learningJourney: TimelineItem[] = [
 ];
 
 export const educationData: EducationItem = {
-  degree: 'Computer Science & Engineering (CSE)',
+  degree: 'Bachelor of Science in Computer Science & Engineering (CSE)',
   field: 'Computer Science and Engineering',
-  institution: '[Add University Name]', // Editable placeholder
-  period: '[Add Start Year – Expected Graduation Year]', // Editable placeholder
+  institution: 'Jamalpur Science and Technology University',
+  cgpa: '3.20',
+  period: '[Start Year – Expected Graduation Year]',
   status: 'Undergraduate Student (CSE)',
-  location: '[Campus Location]',
+  location: 'Jamalpur, Bangladesh',
   coursework: [
     'Data Structures & Algorithms',
     'Database Systems',
@@ -350,6 +360,24 @@ export const educationData: EducationItem = {
     'Developing strong foundational skills in core computer science, algorithmic theory, and software engineering',
     'Hands-on laboratory coursework covering graphics algorithms, database schemas, and networking protocols',
     'Active participation in academic technical coursework, collaborative student projects, and code repositories'
+  ],
+  academicAchievements: [
+    {
+      id: 'scholarship-1st-year',
+      title: '1st Year — 2nd Position',
+      year: '1st Year',
+      position: '2nd Position',
+      award: 'Scholarship',
+      description: 'Secured 2nd position in 1st Year and received a scholarship.'
+    },
+    {
+      id: 'scholarship-2nd-year',
+      title: '2nd Year — 2nd Position',
+      year: '2nd Year',
+      position: '2nd Position',
+      award: 'Scholarship Certificate',
+      description: 'Secured 2nd position in 2nd Year and received a scholarship certificate.'
+    }
   ]
 };
 
@@ -360,7 +388,7 @@ export const certifications: CertificationItem[] = [
     issuer: 'Coursera / IBM',
     date: '[Add Completion Date]',
     description: 'Applied machine learning coursework covering classification algorithms, regression, data preprocessing, and Scikit-learn evaluation metrics.',
-    credentialUrl: undefined, // Editable link placeholder
+    credentialUrl: undefined,
     verified: true,
     skills: ['Python', 'Scikit-learn', 'Supervised Learning', 'Model Evaluation'],
     isPlaceholder: false
@@ -391,44 +419,24 @@ export const certifications: CertificationItem[] = [
 
 export const achievementsData: AchievementItem[] = [
   {
-    id: 'achieve-academic-1',
-    title: 'Academic Milestone / Coursework Project',
+    id: 'scholarship-1st-year',
+    title: '1st Year — 2nd Position',
     category: 'Academic',
-    organization: '[Add University / Department Name]',
-    date: '[Add Semester / Year]',
-    description: 'Recognized academic project showcase or technical coursework distinction in computer science disciplines.',
-    icon: 'GraduationCap',
-    isPlaceholder: true
-  },
-  {
-    id: 'achieve-comp-1',
-    title: 'Coding Competition / Problem Solving Contest',
-    category: 'Competition',
-    organization: '[Add Platform / Contest Name]',
-    date: '[Add Date]',
-    description: 'Participation in algorithmic programming contests, university programming camps, or online problem solving challenges.',
-    icon: 'Trophy',
-    isPlaceholder: true
-  },
-  {
-    id: 'achieve-workshop-1',
-    title: 'Technical Workshop / Seminar Participation',
-    category: 'Workshop',
-    organization: '[Add Organizer / Tech Community]',
-    date: '[Add Date]',
-    description: 'Hands-on technical workshop focused on web engineering, machine learning pipelines, or emerging software tools.',
+    organization: 'Jamalpur Science and Technology University',
+    date: '1st Year',
+    description: 'Secured 2nd position in 1st Year and received a scholarship.',
     icon: 'Award',
-    isPlaceholder: true
+    isPlaceholder: false
   },
   {
-    id: 'achieve-showcase-1',
-    title: 'Project Showcase / Technical Demonstration',
-    category: 'Project Showcase',
-    organization: '[Add University / Event]',
-    date: '[Add Date]',
-    description: 'Demonstrated software systems, computer graphics renderers, or full-stack web applications to peers and faculty.',
-    icon: 'Sparkles',
-    isPlaceholder: true
+    id: 'scholarship-2nd-year',
+    title: '2nd Year — 2nd Position',
+    category: 'Academic',
+    organization: 'Jamalpur Science and Technology University',
+    date: '2nd Year',
+    description: 'Secured 2nd position in 2nd Year and received a scholarship certificate.',
+    icon: 'Award',
+    isPlaceholder: false
   }
 ];
 
@@ -446,8 +454,8 @@ export const developerProfiles: DeveloperProfile[] = [
   {
     id: 'linkedin',
     platform: 'LinkedIn',
-    username: 'farjana-akter-mim-1206a636b',
-    url: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636b',
+    username: 'farjana-akter-mim-1206a636',
+    url: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636',
     description: 'Connect with me professionally, follow my academic progression, and collaborate on internships and engineering projects.',
     icon: 'Linkedin',
     accentColor: 'from-cyan-500/20 to-blue-500/10',

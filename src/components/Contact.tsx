@@ -74,7 +74,6 @@ export function Contact({ isDark }: ContactProps) {
         return undefined;
       case 'subject':
         if (!trimmed) return 'Subject is required';
-        if (trimmed.length < 3) return 'Subject must be at least 3 characters';
         return undefined;
       case 'message':
         if (!trimmed) return 'Message is required';
@@ -285,7 +284,7 @@ export function Contact({ isDark }: ContactProps) {
 
             {/* Card 3: LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/farjana-akter-mim-1206a636b"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Connect with Farjana Akter Mim professionally on LinkedIn"
@@ -593,7 +592,7 @@ export function Contact({ isDark }: ContactProps) {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/farjana-akter-mim-1206a636b"
+                href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Connect with Farjana Akter Mim on LinkedIn"

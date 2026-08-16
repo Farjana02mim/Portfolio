@@ -52,7 +52,7 @@ export function ProjectModal({ project, isOpen, onClose, isDark }: ProjectModalP
         return <BrainCircuit size={13} className="text-purple-400" />;
       case 'graphics':
         return <Cpu size={13} className="text-cyan-400" />;
-      case 'academic':
+      case 'other':
       default:
         return <GraduationCap size={13} className="text-emerald-400" />;
     }
@@ -231,6 +231,17 @@ export function ProjectModal({ project, isOpen, onClose, isDark }: ProjectModalP
                       <span>View GitHub Repository</span>
                       <ArrowUpRight size={13} className="text-slate-400" />
                     </a>
+                  )}
+
+                  {!project.github && !project.githubClient && (
+                    <div
+                      className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium border select-none ${
+                        isDark ? 'border-slate-800 text-slate-400 bg-slate-900/50' : 'border-slate-200 text-slate-500 bg-slate-100/80'
+                      }`}
+                    >
+                      <Github size={15} className="opacity-60" />
+                      <span>Repository Coming Soon</span>
+                    </div>
                   )}
 
                   {/* Live Demo or Coming Soon */}
