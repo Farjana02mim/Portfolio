@@ -236,17 +236,6 @@ export function Skills({ isDark }: SkillsProps) {
                         <span className="font-semibold text-xs tracking-tight">
                           {skill.name}
                         </span>
-
-                        {skill.level === 'Currently Learning' && (
-                          <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-medium bg-amber-500/15 text-amber-300 border border-amber-500/20">
-                            Learning
-                          </span>
-                        )}
-                        {skill.level === 'Developing' && (
-                          <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                            Practicing
-                          </span>
-                        )}
                       </div>
                     ))}
                   </div>

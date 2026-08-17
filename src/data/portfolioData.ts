@@ -34,7 +34,7 @@ export const personalInfo = {
 export const quickStats: StatItem[] = [
   {
     label: 'Academic & Personal Projects',
-    value: '6+',
+    value: '8+',
     subtext: 'Web, ML & Graphics',
     icon: 'FolderGit2'
   },
@@ -46,7 +46,7 @@ export const quickStats: StatItem[] = [
   },
   {
     label: 'GitHub Repositories',
-    value: '6+',
+    value: '9+',
     subtext: 'Open-source project code',
     icon: 'GitPullRequest'
   },
@@ -68,6 +68,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'C', level: 'Proficient', tag: 'Procedural & Memory' },
       { name: 'C++', level: 'Proficient', tag: 'OOP & Algorithms' },
       { name: 'Python', level: 'Proficient', tag: 'ML & Scripting' },
+      { name: 'Java', level: 'Proficient', tag: 'OOP' },
       { name: 'JavaScript', level: 'Proficient', tag: 'ES6+ & Web' },
     ]
   },
@@ -79,6 +80,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'HTML', level: 'Proficient', tag: 'Semantic Markup' },
       { name: 'CSS', level: 'Proficient', tag: 'Responsive Layouts' },
+      { name: 'TypeScript', level: 'Proficient', tag: 'JavaScript + Type System' },
       { name: 'JavaScript', level: 'Proficient', tag: 'DOM & Logic' },
       { name: 'React', level: 'Proficient', tag: 'Component Architecture' },
       { name: 'Vite', level: 'Proficient', tag: 'Fast Build Tool' },
@@ -134,7 +136,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'Computer Graphics', level: 'Developing', tag: '2D/3D & OpenGL' },
       { name: 'Digital Image Processing', level: 'Developing', tag: 'Filters & Transformations' },
-      { name: 'Microprocessors', level: 'Developing', tag: 'Architecture & Assembly' },
+      { name: 'Microprocessors and Microcontrollers', level: 'Developing', tag: 'Architecture & Assembly' },
       { name: 'System Analysis and Design', level: 'Developing', tag: 'UML & System Models' },
     ]
   }
@@ -152,7 +154,38 @@ export const projects: Project[] = [
     githubClient: 'https://github.com/Farjana02mim/zap-shift-client',
     githubServer: 'https://github.com/Farjana02mim/zap-shift-server',
     github: 'https://github.com/Farjana02mim/zap-shift-client',
+    // TODO: এখানে আপনার deployed live link বসান, e.g. "https://zap-shift.vercel.app"
     liveDemo: undefined, // Coming Soon
+    featured: true,
+    badge: 'Featured Project'
+  },
+  {
+    id: 'art-gallery',
+    title: 'Art Gallery',
+    category: 'web',
+    categoryLabel: 'Web Development',
+    description: 'Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.',
+    longDescription: 'A full-stack art gallery web application built to practice modern frontend and backend development, RESTful API design, MongoDB integration, and responsive Tailwind UI styling.',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'REST API'],
+    githubClient: 'https://github.com/Farjana02mim/Art-Gallery-Client',
+    githubServer: 'https://github.com/Farjana02mim/Art-Gallery-Server',
+    github: 'https://github.com/Farjana02mim/Art-Gallery-Client',
+    liveDemo: 'https://art-gallery-85d90.web.app/',
+    featured: true,
+    badge: 'Featured Project'
+  },
+  {
+    id: 'pet-adoption-supply',
+    title: 'Pet Adoption Supply',
+    category: 'web',
+    categoryLabel: 'Web Development',
+    description: 'Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.',
+    longDescription: 'A full-stack pet adoption and supply platform built to practice modern frontend and backend development, RESTful API design, MongoDB integration, and responsive Tailwind UI styling.',
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'REST API'],
+    githubClient: 'https://github.com/Farjana02mim/petAdoption-client',
+    githubServer: 'https://github.com/Farjana02mim/petAdoptionSupply-server',
+    github: 'https://github.com/Farjana02mim/petAdoption-client',
+    liveDemo: 'https://pet-adoption-supply.web.app/',
     featured: true,
     badge: 'Featured Project'
   },
@@ -173,7 +206,7 @@ export const projects: Project[] = [
       'Data Preprocessing',
       'Model Evaluation'
     ],
-    github: undefined, // Public repo not available yet -> Shows "Repository Coming Soon"
+    github: 'https://github.com/Farjana02mim/Rainfall_Prediction',
     liveDemo: undefined,
     featured: false,
     badge: 'Coursework Project'
@@ -331,7 +364,7 @@ export const learningJourney: TimelineItem[] = [
     title: 'Advanced Projects',
     period: 'Practical Systems',
     category: 'Practical Systems & Graphics',
-    description: 'Building integrated software systems like Zap Shift, computer graphics renderers in OpenGL, and digital image processing applications.',
+    description: 'Building integrated software systems like Zap Shift, Art Gallery, Pet Adoption Supply, computer graphics renderers in OpenGL, and digital image processing applications.',
     skills: ['Full-Stack Systems', 'Computer Graphics', 'DIP', 'Continuous Learning'],
     icon: 'Rocket'
   }
@@ -341,8 +374,8 @@ export const educationData: EducationItem = {
   degree: 'Bachelor of Science in Computer Science & Engineering (CSE)',
   field: 'Computer Science and Engineering',
   institution: 'Jamalpur Science and Technology University',
-  cgpa: '3.20',
-  period: '[Start Year – Expected Graduation Year]',
+  cgpa: '3.81',
+  period: 'August 2023 – August 2027',
   status: 'Undergraduate Student (CSE)',
   location: 'Jamalpur, Bangladesh',
   coursework: [
@@ -375,8 +408,8 @@ export const educationData: EducationItem = {
       title: '2nd Year — 2nd Position',
       year: '2nd Year',
       position: '2nd Position',
-      award: 'Scholarship Certificate',
-      description: 'Secured 2nd position in 2nd Year and received a scholarship certificate.'
+      award: 'Scholarship',
+      description: 'Secured 2nd position in 2nd Year and received a scholarship.'
     }
   ]
 };
@@ -434,7 +467,7 @@ export const achievementsData: AchievementItem[] = [
     category: 'Academic',
     organization: 'Jamalpur Science and Technology University',
     date: '2nd Year',
-    description: 'Secured 2nd position in 2nd Year and received a scholarship certificate.',
+    description: 'Secured 2nd position in 2nd Year and received a scholarship.',
     icon: 'Award',
     isPlaceholder: false
   }
@@ -449,7 +482,7 @@ export const developerProfiles: DeveloperProfile[] = [
     description: 'Explore my open-source code repositories, academic projects, computer graphics code, and machine learning pipelines.',
     icon: 'Github',
     accentColor: 'from-blue-500/20 to-indigo-500/10',
-    stats: '6+ Repositories • Active Building'
+    stats: '9+ Repositories • Active Building'
   },
   {
     id: 'linkedin',
@@ -485,6 +518,61 @@ export const githubRepos: GitHubRepo[] = [
     url: 'https://github.com/Farjana02mim/zap-shift-server',
     topics: ['nodejs', 'express', 'rest-api', 'mongodb', 'jwt-auth'],
     updatedAt: 'Recently Updated'
+  },
+  {
+    name: 'Art-Gallery-Client',
+    description: 'React and Tailwind CSS frontend for the Art Gallery full-stack showcase application.',
+    language: 'JavaScript / React',
+    languageColor: '#f7df1e',
+    stars: 1,
+    forks: 0,
+    url: 'https://github.com/Farjana02mim/Art-Gallery-Client',
+    topics: ['react', 'tailwindcss', 'vite', 'frontend', 'art-gallery'],
+    updatedAt: 'Recently Updated'
+  },
+  {
+    name: 'Art-Gallery-Server',
+    description: 'Node.js and Express REST API backend with MongoDB for the Art Gallery application.',
+    language: 'JavaScript / Node.js',
+    languageColor: '#68a063',
+    stars: 1,
+    forks: 0,
+    url: 'https://github.com/Farjana02mim/Art-Gallery-Server',
+    topics: ['nodejs', 'express', 'rest-api', 'mongodb'],
+    updatedAt: 'Recently Updated'
+  },
+  {
+    name: 'petAdoption-client',
+    description: 'React and Tailwind CSS frontend for the Pet Adoption Supply full-stack platform.',
+    language: 'JavaScript / React',
+    languageColor: '#f7df1e',
+    stars: 1,
+    forks: 0,
+    url: 'https://github.com/Farjana02mim/petAdoption-client',
+    topics: ['react', 'tailwindcss', 'vite', 'frontend', 'pet-adoption'],
+    updatedAt: 'Recently Updated'
+  },
+  {
+    name: 'petAdoptionSupply-server',
+    description: 'Node.js and Express REST API backend with MongoDB for the Pet Adoption Supply platform.',
+    language: 'JavaScript / Node.js',
+    languageColor: '#68a063',
+    stars: 1,
+    forks: 0,
+    url: 'https://github.com/Farjana02mim/petAdoptionSupply-server',
+    topics: ['nodejs', 'express', 'rest-api', 'mongodb'],
+    updatedAt: 'Recently Updated'
+  },
+  {
+    name: 'Rainfall_Prediction',
+    description: 'Supervised classification workflows for rainfall prediction using weather data and Scikit-learn.',
+    language: 'Python',
+    languageColor: '#3572A5',
+    stars: 1,
+    forks: 0,
+    url: 'https://github.com/Farjana02mim/Rainfall_Prediction',
+    topics: ['python', 'scikit-learn', 'machine-learning', 'classification'],
+    updatedAt: 'Active Repository'
   },
   {
     name: 'University_Management_System',

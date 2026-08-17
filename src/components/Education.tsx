@@ -104,7 +104,7 @@ export function Education({ isDark }: EducationProps) {
                           value={durationPeriod}
                           onChange={(e) => setDurationPeriod(e.target.value)}
                           className="px-3 py-1 text-xs rounded-xl border border-blue-500 bg-slate-900 text-white focus:outline-none"
-                          placeholder="e.g. [Start Year – Expected Graduation Year]"
+                          placeholder="e.g. [2023 – 2027]"
                         />
                         <button
                           onClick={() => setIsEditing(false)}

@@ -11,7 +11,6 @@ export interface ResumeProject {
   githubClientUrl?: string;
   githubServerUrl?: string;
   liveUrl?: string;
-  isComingSoon?: boolean;
 }
 
 export interface AcademicAchievement {
@@ -69,7 +68,7 @@ export const resumeData: ResumeData = {
     "I'm a Computer Science and Engineering student who enjoys turning ideas into practical projects. I'm currently building my skills in web development, software engineering, machine learning, and problem solving through coursework and hands-on projects.",
 
   // Contact details
-  email: "[Your Email]",
+  email: "farjanaaktermim330@gmail.com",
   github: "https://github.com/Farjana02mim",
   githubUsername: "Farjana02mim",
   linkedin: "https://www.linkedin.com/in/farjana-akter-mim-1206a636",
@@ -77,15 +76,15 @@ export const resumeData: ResumeData = {
 
   // PDF Configuration
   pdfPath: "/resume/Farjana_Akter_Mim_Resume.pdf",
-  hasPdf: false, // Set to true when Farjana_Akter_Mim_Resume.pdf is placed in /resume/
+  hasPdf: true, // PDF has been placed in /public/resume/
 
   // Academic Education (Verified)
   education: {
     degree: "Bachelor of Science in Computer Science & Engineering (CSE)",
     department: "Department of Computer Science & Engineering",
     institution: "Jamalpur Science and Technology University",
-    cgpa: "3.20",
-    period: "[Start Year – Expected Graduation Year]"
+    cgpa: "3.81",
+    period: "August 2023 – August 2027",
   },
 
   // Academic Achievements (Verified)
@@ -95,20 +94,22 @@ export const resumeData: ResumeData = {
       year: "1st Year",
       position: "2nd Position",
       award: "Scholarship",
-      description: "Secured 2nd position in 1st Year and received a scholarship."
+      description:
+        "Secured 2nd position in 1st Year and received a scholarship.",
     },
     {
       title: "2nd Year — 2nd Position — Scholarship Certificate",
       year: "2nd Year",
       position: "2nd Position",
-      award: "Scholarship Certificate",
-      description: "Secured 2nd position in 2nd Year and received a scholarship certificate."
-    }
+      award: "Scholarship",
+      description:
+        "Secured 2nd position in 2nd Year and received a scholarship.",
+    },
   ],
 
   // Technical Skills
   skills: {
-    programming: ["C", "C++", "Python", "JavaScript"],
+    programming: ["C", "C++", "Python", "JavaScript", "Java", "TypeScript"],
     frontend: ["HTML", "CSS", "JavaScript", "React", "Vite", "Tailwind CSS"],
     backend: ["Node.js", "Express.js", "REST API", "MongoDB"],
     machineLearning: [
@@ -118,15 +119,38 @@ export const resumeData: ResumeData = {
       "Scikit-learn",
       "Matplotlib",
       "Data Preprocessing",
-      "Model Evaluation"
+      "Model Evaluation",
     ],
-    tools: ["Git", "GitHub", "Firebase", "Jupyter Notebook", "Google Colab", "Linux"],
+    tools: [
+      "Git",
+      "GitHub",
+      "Firebase",
+      "Jupyter Notebook",
+      "Google Colab",
+      "Linux",
+    ],
     otherAreas: [
+      "Structured Programming Language",
+      "Object Oriented Programming",
+      "Discrete Mathematics",
+      "Computer Architecture",
+      "Data Structure",
+      "Basic Electronics, Digital Electronics",
+      "Competitive Programming",
+      "Industrial Economics,Management & Accounting,Sociology",
+      "Design and Analysis of Algorithm",
+      "Numerical Methods",
+      "Database Management System",
+      "Data Communication",
+      "Computer Networks",
+      "Operating System and System Programming",
+      "Digital Signal Processing",
+      "Artificial Intelligence(AI)",
       "Computer Graphics",
       "Digital Image Processing",
-      "Microprocessors",
-      "System Analysis & Design"
-    ]
+      "Microprocessors & Microcontrollers",
+      "System Analysis & Design",
+    ],
   },
 
   // Projects
@@ -135,11 +159,57 @@ export const resumeData: ResumeData = {
       name: "Zap Shift",
       description:
         "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
-      technologies: ["React", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "REST API"],
+      technologies: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+      ],
       githubUrl: "https://github.com/Farjana02mim/zap-shift-client",
       githubClientUrl: "https://github.com/Farjana02mim/zap-shift-client",
       githubServerUrl: "https://github.com/Farjana02mim/zap-shift-server",
-      isComingSoon: true
+      // TODO: এখানে আপনার deployed live link বসান, e.g. "https://zap-shift.vercel.app"
+      liveUrl: undefined,
+    },
+    {
+      name: "Art Gallery",
+      description:
+        "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
+      technologies: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+      ],
+      githubUrl: "https://github.com/Farjana02mim/Art-Gallery-Client",
+      githubClientUrl: "https://github.com/Farjana02mim/Art-Gallery-Client",
+      githubServerUrl: "https://github.com/Farjana02mim/Art-Gallery-Server",
+      liveUrl: "https://art-gallery-85d90.web.app/",
+    },
+    {
+      name: "Pet Adoption Supply",
+      description:
+        "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
+      technologies: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+      ],
+      githubUrl: "https://github.com/Farjana02mim/petAdoption-client",
+      githubClientUrl: "https://github.com/Farjana02mim/petAdoption-client",
+      githubServerUrl:
+        "https://github.com/Farjana02mim/petAdoptionSupply-server",
+      liveUrl: "https://pet-adoption-supply.web.app/",
     },
     {
       name: "Rainfall Prediction Classifier",
@@ -153,27 +223,33 @@ export const resumeData: ResumeData = {
         "Logistic Regression",
         "Random Forest",
         "Data Preprocessing",
-        "Model Evaluation"
+        "Model Evaluation",
       ],
-      githubUrl: undefined,
-      isComingSoon: true
+      githubUrl: "https://github.com/Farjana02mim/Rainfall_Prediction",
+      liveUrl: undefined,
     },
     {
       name: "Computer Graphics Project",
       description:
         "Developed while learning fundamental computer graphics concepts, 2D/3D transformations, and interactive rendering algorithms in OpenGL.",
-      technologies: ["C++", "OpenGL", "Computer Graphics", "Graphics Algorithms"],
+      technologies: [
+        "C++",
+        "OpenGL",
+        "Computer Graphics",
+        "Graphics Algorithms",
+      ],
       githubUrl: "https://github.com/Farjana02mim/Computer_Graphics_Project",
-      isComingSoon: true
+      liveUrl: undefined,
     },
     {
       name: "University Management System",
       description:
         "Built as a hands-on project to practice object-oriented programming, data structures, and file handling in C++.",
       technologies: ["C++", "OOP", "Data Structures", "File Handling"],
-      githubUrl: "https://github.com/Farjana02mim/University_Management_System",
-      isComingSoon: true
-    }
+      githubUrl:
+        "https://github.com/Farjana02mim/University_Management_System",
+      liveUrl: undefined,
+    },
   ],
 
   // Relevant Coursework
@@ -186,7 +262,30 @@ export const resumeData: ResumeData = {
     "Digital Image Processing",
     "Computer Graphics",
     "System Analysis & Design",
-    "Machine Learning"
+    "Machine Learning",
+  ],
+
+  // Certifications
+  // NOTE: These are EXAMPLE entries — replace name/issuer/date/url with your actual certificates.
+  certifications: [
+    {
+      name: "Introduction to Machine Learning",
+      issuer: "Coursera",
+      date: "March 2025",
+      url: "https://coursera.org/verify/REPLACE_WITH_YOUR_CERT_ID",
+    },
+    {
+      name: "JavaScript Algorithms and Data Structures",
+      issuer: "freeCodeCamp",
+      date: "January 2025",
+      url: "https://freecodecamp.org/certification/REPLACE_WITH_YOUR_USERNAME/javascript-algorithms-and-data-structures",
+    },
+    {
+      name: "React - The Complete Guide",
+      issuer: "Udemy",
+      date: "December 2024",
+      url: "https://udemy.com/certificate/REPLACE_WITH_YOUR_CERT_ID",
+    },
   ],
 
   // Currently Learning
@@ -194,11 +293,12 @@ export const resumeData: ResumeData = {
     "Advanced Web Development",
     "Machine Learning",
     "Data Analysis",
-    "Backend Development"
+    "Deep Learning",
+    "Research",
   ],
 
   // Notes
-  certificationsNote: "Certifications will be added as I complete them.",
-  experienceNote: "Currently building experience through academic and personal projects."
+  certificationsNote: "More certifications will be added as I complete them.",
+  experienceNote:
+    "Currently building experience through academic and personal projects.",
 };
-

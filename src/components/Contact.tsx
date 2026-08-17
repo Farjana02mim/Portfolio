@@ -49,12 +49,14 @@ export function Contact({ isDark }: ContactProps) {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const emailAddress = personalInfo.email || '[Your Email]';
+  const hasValidRecipient = !!emailAddress && emailAddress !== '[Your Email]';
 
   const handleCopyEmail = () => {
-    if (emailAddress && emailAddress !== '[Your Email]') {
+    if (hasValidRecipient) {
       navigator.clipboard.writeText(emailAddress);
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2000);
@@ -117,30 +119,56 @@ export function Contact({ isDark }: ContactProps) {
     setErrors((prev) => ({ ...prev, [name]: err }));
   };
 
+  /**
+   * REAL, WORKING SUBMISSION (no backend / API key required):
+   * Builds a `mailto:` link pre-filled with the visitor's name, email,
+   * subject, and message, and opens the visitor's own default email
+   * client (Gmail, Outlook, Apple Mail, etc.) with everything ready to
+   * send. The visitor just clicks "Send" in their own mail app.
+   *
+   * To upgrade this later to a fully in-page send (no mail client popup),
+   * swap the block below for an EmailJS or Formspree call, e.g.:
+   *   await emailjs.send('service_id', 'template_id', formData, 'public_key');
+   *   // or
+   *   await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+   *     method: 'POST',
+   *     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+   *     body: JSON.stringify(formData),
+   *   });
+   */
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setTouched({ name: true, email: true, subject: true, message: true });
 
     if (!validateAll()) {
       return;
     }
 
+    if (!hasValidRecipient) {
+      setSubmitError('Contact email is not configured yet. Please try again later.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      /**
-       * Frontend-ready structure for external mail service integrations (EmailJS / Formspree / Backend API)
-       * Example:
-       * await emailjs.send('service_id', 'template_id', formData, 'public_key');
-       * or
-       * await fetch('https://formspree.io/f/YOUR_FORM_ID', { method: 'POST', body: JSON.stringify(formData) });
-       */
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const mailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+      const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(mailBody)}`;
+
+      // Opens the visitor's default mail client with the message pre-filled.
+      window.location.href = mailtoLink;
+
+      // Small delay so the submitting state is visible before showing success.
+      await new Promise((resolve) => setTimeout(resolve, 700));
 
       setIsSubmitting(false);
       setIsSubmitted(true);
     } catch {
       setIsSubmitting(false);
+      setSubmitError('Something went wrong opening your email client. Please email me directly instead.');
     }
   };
 
@@ -148,6 +176,7 @@ export function Contact({ isDark }: ContactProps) {
     setFormData({ name: '', email: '', subject: '', message: '' });
     setTouched({});
     setErrors({});
+    setSubmitError(null);
     setIsSubmitted(false);
   };
 
@@ -229,7 +258,7 @@ export function Contact({ isDark }: ContactProps) {
                   </div>
                 </div>
 
-                {emailAddress !== '[Your Email]' && (
+                {hasValidRecipient && (
                   <button
                     onClick={handleCopyEmail}
                     aria-label="Copy email address to clipboard"
@@ -248,7 +277,7 @@ export function Contact({ isDark }: ContactProps) {
 
             {/* Card 2: GitHub */}
             <a
-              href="https://github.com/Farjana02mim"
+              href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Explore Farjana Akter Mim's projects and code on GitHub"
@@ -347,10 +376,17 @@ export function Contact({ isDark }: ContactProps) {
                     
                     <div className="space-y-2 max-w-md mx-auto">
                       <h3 className="text-xl sm:text-2xl font-bold font-display tracking-tight">
-                        Message Sent
+                        Almost There!
                       </h3>
                       <p className={`text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-                        Thanks for reaching out! I'll get back to you as soon as possible.
+                        Your email client should have opened with your message pre-filled — just hit send there to reach me. If nothing opened, email me directly at{' '}
+                        <a
+                          href={`mailto:${emailAddress}`}
+                          className="font-semibold text-blue-400 hover:text-blue-300 hover:underline font-mono break-all"
+                        >
+                          {emailAddress}
+                        </a>
+                        .
                       </p>
                     </div>
 
@@ -521,6 +557,14 @@ export function Contact({ isDark }: ContactProps) {
                       )}
                     </div>
 
+                    {/* Form-level submit error (e.g. recipient not configured) */}
+                    {submitError && (
+                      <p className="flex items-center gap-1.5 text-red-400 text-xs font-medium" role="alert">
+                        <AlertCircle size={13} className="shrink-0" />
+                        <span>{submitError}</span>
+                      </p>
+                    )}
+
                     {/* Submit Button */}
                     <button
                       type="submit"
@@ -530,7 +574,7 @@ export function Contact({ isDark }: ContactProps) {
                       {isSubmitting ? (
                         <>
                           <Loader2 size={16} className="animate-spin" />
-                          <span>Sending Message...</span>
+                          <span>Opening Your Email App...</span>
                         </>
                       ) : (
                         <>
@@ -539,6 +583,10 @@ export function Contact({ isDark }: ContactProps) {
                         </>
                       )}
                     </button>
+
+                    <p className={`text-[11px] text-center ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                      This opens your own email app with the message pre-filled — nothing is sent from this site directly.
+                    </p>
                   </form>
                 )}
               </AnimatePresence>
@@ -614,5 +662,3 @@ export function Contact({ isDark }: ContactProps) {
     </section>
   );
 }
-
-

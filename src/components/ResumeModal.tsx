@@ -18,7 +18,8 @@ import {
   Medal,
   Sparkle,
   FileText,
-  Info
+  Info,
+  CalendarDays
 } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
 
@@ -285,7 +286,7 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               </div>
               <div className="space-y-3 divide-y divide-slate-100">
                 {resumeData.projects.map((proj, idx) => (
-                  <div key={proj.name} className={`text-xs space-y-1 ${idx !== 0 ? 'pt-2.5' : ''}`}>
+                  <div key={`${proj.name}-${idx}`} className={`text-xs space-y-1 ${idx !== 0 ? 'pt-2.5' : ''}`}>
                     <div className="flex justify-between items-center flex-wrap gap-1">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-slate-900">{proj.name}</span>
@@ -323,9 +324,20 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
                           </span>
                         )}
                       </div>
-                      <span className="text-[10px] font-mono text-slate-500">
-                        {proj.liveUrl ? 'Live Demo Available' : 'Live Demo: Coming Soon'}
-                      </span>
+                      {/* Only render Live Demo link when a liveUrl actually exists — nothing shown otherwise */}
+                      {proj.liveUrl && (
+                        <span className="text-[10px] font-mono text-slate-500">
+                          <a
+                            href={proj.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-blue-700 flex items-center gap-1 text-green-500"
+                          >
+                            <ExternalLink size={10} className="text-green-500" />
+                            Live Demo
+                          </a>
+                        </span>
+                      )}
                     </div>
                     <p className="text-slate-600">{proj.description}</p>
                     <p className="text-[11px] font-mono text-slate-500">
@@ -357,23 +369,70 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               </div>
             </div>
 
-            {/* 7. Certifications (Only rendered if verified certifications exist) */}
+            {/* 7. Certifications (Only rendered if certifications exist) */}
             {resumeData.certifications && resumeData.certifications.length > 0 && (
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
                   <Award size={14} className="text-blue-700" />
                   <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
                     Certifications
                   </h2>
                 </div>
-                <div className="space-y-1">
-                  {resumeData.certifications.map((cert) => (
-                    <div key={cert.name} className="p-2 rounded-xl bg-slate-50 border border-slate-200/80 text-xs flex justify-between items-center">
-                      <span className="font-semibold text-slate-900">{cert.name}</span>
-                      {cert.issuer && <span className="text-slate-500 font-mono">{cert.issuer}</span>}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {resumeData.certifications.map((cert, idx) => (
+                    <div
+                      key={`${cert.name}-${idx}`}
+                      className="p-3 rounded-xl bg-emerald-50/50 border border-emerald-200/80 space-y-1 text-xs"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="font-bold text-slate-900 leading-snug">{cert.name}</span>
+                        {cert.url && (
+                          <a
+                            href={cert.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="shrink-0 text-emerald-700 hover:text-emerald-900"
+                            title="View Certificate"
+                            aria-label={`View certificate: ${cert.name}`}
+                          >
+                            <ExternalLink size={12} />
+                          </a>
+                        )}
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-600">
+                        {cert.issuer && (
+                          <span className="font-mono font-medium text-emerald-900 bg-emerald-100/80 px-1.5 py-0.5 rounded border border-emerald-200">
+                            {cert.issuer}
+                          </span>
+                        )}
+                        {cert.date && (
+                          <span className="flex items-center gap-1 text-slate-500">
+                            <CalendarDays size={11} className="text-slate-400" />
+                            {cert.date}
+                          </span>
+                        )}
+                      </div>
+
+                      {cert.url && (
+                        <a
+                          href={cert.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[10px] font-mono text-blue-700 hover:text-blue-900 pt-0.5"
+                        >
+                          <ExternalLink size={10} />
+                          Verify Certificate
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
+                {resumeData.certificationsNote && (
+                  <p className="text-[11px] text-slate-500 italic pt-0.5">
+                    {resumeData.certificationsNote}
+                  </p>
+                )}
               </div>
             )}
 
@@ -398,10 +457,26 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
               </div>
             </div>
 
+            {/* 9. Experience Note (fallback for students with no formal work experience) */}
+            {resumeData.experienceNote && (
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 border-b border-slate-200 pb-1">
+                  <Briefcase size={14} className="text-blue-700" />
+                  <h2 className="text-xs font-bold uppercase tracking-wider text-slate-900 font-display">
+                    Experience
+                  </h2>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                  <p className="text-xs text-slate-600 italic leading-relaxed">
+                    {resumeData.experienceNote}
+                  </p>
+                </div>
+              </div>
+            )}
+
           </div>
         </div>
       </div>
     </div>
   );
 }
-
