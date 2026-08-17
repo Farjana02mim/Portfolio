@@ -326,7 +326,7 @@ export function ResumeModal({ isOpen, onClose, isDark }: ResumeModalProps) {
                       </div>
                       {/* Only render Live Demo link when a liveUrl actually exists — nothing shown otherwise */}
                       {proj.liveUrl && (
-                        <span className="text-[10px] font-mono text-slate-500">
+                        <span className="text-[10px] text-green-500 font-mono text-slate-500">
                           <a
                             href={proj.liveUrl}
                             target="_blank"

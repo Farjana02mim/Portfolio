@@ -13,12 +13,16 @@ export interface ResumeProject {
   liveUrl?: string;
 }
 
-export interface AcademicAchievement {
+export interface AchievementItem {
+  id: string;
   title: string;
-  year: string;
-  position: string;
-  award: string;
+  category: string;
+  organization?: string;
+  date: string;
   description: string;
+  icon: string;
+  isPlaceholder: boolean;
+  image?: string;  
 }
 
 export interface ResumeData {
@@ -266,25 +270,24 @@ export const resumeData: ResumeData = {
   ],
 
   // Certifications
-  // NOTE: These are EXAMPLE entries — replace name/issuer/date/url with your actual certificates.
   certifications: [
     {
-      name: "Introduction to Machine Learning",
-      issuer: "Coursera",
-      date: "March 2025",
-      url: "https://coursera.org/verify/REPLACE_WITH_YOUR_CERT_ID",
+      name: "Machine Learning with Python",
+      issuer: "Coursera / IBM",
+      date: "August 2026",
+      url: "https://lnkd.in/gtn-9d7x",
     },
     {
-      name: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      date: "January 2025",
-      url: "https://freecodecamp.org/certification/REPLACE_WITH_YOUR_USERNAME/javascript-algorithms-and-data-structures",
+      name: "IEEE Membership",
+      issuer: "IEEE",
+      date: "2026",
+      url: "/certificates/ieee-membership-2026.jpg",
     },
     {
-      name: "React - The Complete Guide",
-      issuer: "Udemy",
-      date: "December 2024",
-      url: "https://udemy.com/certificate/REPLACE_WITH_YOUR_CERT_ID",
+      name: "IEEE Women in Engineering (WIE) Membership",
+      issuer: "IEEE Women in Engineering",
+      date: "2026",
+      url: "/certificates/ieee-wie-membership-2026.jpg",
     },
   ],
 

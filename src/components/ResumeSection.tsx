@@ -441,7 +441,7 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
 
                         {/* Only render Live Demo link when a liveUrl actually exists — nothing shown otherwise */}
                         {proj.liveUrl && (
-                          <span className="text-[11px] font-mono text-slate-500 shrink-0">
+                          <span className="text-[11px] text-green-500 font-mono text-slate-500 shrink-0">
                             <a
                               href={proj.liveUrl}
                               target="_blank"
@@ -449,8 +449,8 @@ export function ResumeSection({ isDark, onOpenModal }: ResumeSectionProps) {
                               className="inline-flex items-center gap-0.5 hover:text-blue-700 transition-colors"
                               aria-label={`View ${proj.name} live demo (opens in new tab)`}
                             >
-                              <ExternalLink size={10} />
-                              <span>Live Demo</span>
+                              <ExternalLink size={10} className="text-green-500" />
+                              <span className="text-green-500">Live Demo</span>
                             </a>
                           </span>
                         )}
