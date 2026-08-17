@@ -75,8 +75,8 @@ export const resumeData: ResumeData = {
   email: "farjanaaktermim330@gmail.com",
   github: "https://github.com/Farjana02mim",
   githubUsername: "Farjana02mim",
-  linkedin: "https://www.linkedin.com/in/farjana-akter-mim-1206a636",
-  linkedinUsername: "farjana-akter-mim-1206a636",
+  linkedin: "https://www.linkedin.com/in/farjana-akter-mim-1206a636b",
+  linkedinUsername: "farjana-akter-mim-1206a636b",
 
   // PDF Configuration
   pdfPath: "/resume/Farjana_Akter_Mim_Resume.pdf",
