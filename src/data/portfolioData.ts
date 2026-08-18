@@ -591,8 +591,8 @@ export const developerProfiles: DeveloperProfile[] = [
   {
     id: 'linkedin',
     platform: 'LinkedIn',
-    username: 'farjana-akter-mim-1206a636',
-    url: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636',
+    username: 'farjana-akter-mim-1206a636b',
+    url: 'https://www.linkedin.com/in/farjana-akter-mim-1206a636b',
     description: 'Connect with me professionally, follow my academic progression, and collaborate on internships and engineering projects.',
     icon: 'Linkedin',
     accentColor: 'from-cyan-500/20 to-blue-500/10',
