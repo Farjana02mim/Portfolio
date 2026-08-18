@@ -1,126 +1,86 @@
-/**
- * Central Editable Resume Data Object for Farjana Akter Mim
- * Editable in a single location for easy future updates.
- */
+import { ResumeData } from "../types";
 
-export interface ResumeProject {
-  name: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  githubClientUrl?: string;
-  githubServerUrl?: string;
-  liveUrl?: string;
-}
-
-export interface AchievementItem {
-  id: string;
-  title: string;
-  category: string;
-  organization?: string;
-  date: string;
-  description: string;
-  icon: string;
-  isPlaceholder: boolean;
-  image?: string;  
-}
-
-export interface ResumeData {
-  name: string;
-  title: string;
-  summary: string;
-  email: string;
-  github: string;
-  githubUsername: string;
-  linkedin: string;
-  linkedinUsername: string;
-  pdfPath: string;
-  hasPdf: boolean; // Set to true when Farjana_Akter_Mim_Resume.pdf is uploaded to /resume/
-  education: {
-    degree: string;
-    department: string;
-    institution: string;
-    cgpa: string;
-    period: string; // Placeholder [Start Year – Expected Graduation Year]
-  };
-  academicAchievements: AcademicAchievement[];
-  skills: {
-    programming: string[];
-    frontend: string[];
-    backend: string[];
-    machineLearning: string[];
-    tools: string[];
-    otherAreas: string[];
-  };
-  projects: ResumeProject[];
-  coursework: string[];
-  certifications?: Array<{
-    name: string;
-    issuer?: string;
-    date?: string;
-    url?: string;
-  }>;
-  currentlyLearning: string[];
-  certificationsNote: string;
-  experienceNote: string;
-}
-
-export const resumeData: ResumeData = {
-  name: "Farjana Akter Mim",
+export const initialResumeData: ResumeData = {
+  name: "FARJANA AKTER MIM",
   title: "Computer Science & Engineering Student",
+  subtitle: "B.Sc in CSE | Aspiring Full-Stack Developer & ML Enthusiast",
   summary:
-    "I'm a Computer Science and Engineering student who enjoys turning ideas into practical projects. I'm currently building my skills in web development, software engineering, machine learning, and problem solving through coursework and hands-on projects.",
+    "Proactive Computer Science and Engineering undergraduate with strong foundations in algorithms, full-stack web development, and machine learning workflows. Experienced in developing scalable web applications using React, Node.js, Express, and MongoDB, alongside training predictive models with Python and Scikit-learn. Proven academic excellence with 2 consecutive Merit Scholarships (2nd Position) and recognized competitive team participation.",
 
   // Contact details
   email: "farjanaaktermim330@gmail.com",
+  phone: "+880 1318-036509",
+  location: "Jamalpur, Bangladesh",
   github: "https://github.com/Farjana02mim",
   githubUsername: "Farjana02mim",
   linkedin: "https://www.linkedin.com/in/farjana-akter-mim-1206a636b",
   linkedinUsername: "farjana-akter-mim-1206a636b",
+  portfolioUrl: "https://farjana-akter-mim.vercel.app",
 
   // PDF Configuration
   pdfPath: "/resume/Farjana_Akter_Mim_Resume.pdf",
-  hasPdf: true, // PDF has been placed in /public/resume/
+  hasPdf: true,
+  photoUrl: "",
+  showPhoto: false, // Default standard ATS format (photo optional via toggle)
 
   // Academic Education (Verified)
   education: {
     degree: "Bachelor of Science in Computer Science & Engineering (CSE)",
     department: "Department of Computer Science & Engineering",
     institution: "Jamalpur Science and Technology University",
-    cgpa: "3.81",
-    period: "August 2023 – August 2027",
+    cgpa: "3.81 / 4.00",
+    period: "August 2023 – August 2027 (Expected)",
+    location: "Jamalpur, Bangladesh",
   },
 
   // Academic Achievements (Verified)
   academicAchievements: [
     {
-      title: "1st Year — 2nd Position — Scholarship",
+      title: "1st Year Merit Scholarship (2nd Position)",
       year: "1st Year",
       position: "2nd Position",
-      award: "Scholarship",
+      award: "Merit Scholarship",
+      organization: "Jamalpur Science and Technology University",
+      date: "2023",
       description:
-        "Secured 2nd position in 1st Year and received a scholarship.",
+        "Awarded government merit scholarship for securing 2nd position in the 1st Year B.Sc Engineering examinations.",
     },
     {
-      title: "2nd Year — 2nd Position — Scholarship Certificate",
+      title: "2nd Year Merit Scholarship (2nd Position)",
       year: "2nd Year",
       position: "2nd Position",
-      award: "Scholarship",
+      award: "Merit Scholarship",
+      organization: "Jamalpur Science and Technology University",
+      date: "2024",
       description:
-        "Secured 2nd position in 2nd Year and received a scholarship.",
+        "Maintained academic excellence and secured 2nd position in the 2nd Year B.Sc Engineering examinations with scholarship.",
     },
   ],
 
-  // Technical Skills
+  // Technical Skills formatted for ATS scanning
   skills: {
-    programming: ["C", "C++", "Python", "JavaScript", "Java", "TypeScript"],
-    frontend: ["HTML", "CSS", "JavaScript", "React", "Vite", "Tailwind CSS"],
-    backend: ["Node.js", "Express.js", "REST API", "MongoDB"],
+    programming: [
+      "C",
+      "C++",
+      "Python",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "Java",
+    ],
+    frontend: [
+      "React.js",
+      "Vite",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "Responsive UI",
+    ],
+    backend: ["Node.js", "Express.js", "RESTful APIs", "MongoDB", "Firebase"],
     machineLearning: [
       "Python",
+      "Scikit-learn",
       "Pandas",
       "NumPy",
-      "Scikit-learn",
       "Matplotlib",
       "Data Preprocessing",
       "Model Evaluation",
@@ -128,41 +88,36 @@ export const resumeData: ResumeData = {
     tools: [
       "Git",
       "GitHub",
-      "Firebase",
+      "VS Code",
       "Jupyter Notebook",
       "Google Colab",
-      "Linux",
+      "Linux / Bash",
     ],
     otherAreas: [
-      "Structured Programming Language",
-      "Object Oriented Programming",
-      "Discrete Mathematics",
-      "Computer Architecture",
-      "Data Structure",
-      "Basic Electronics, Digital Electronics",
-      "Competitive Programming",
-      "Industrial Economics,Management & Accounting,Sociology",
-      "Design and Analysis of Algorithm",
-      "Numerical Methods",
-      "Database Management System",
-      "Data Communication",
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming (OOP)",
+      "Database Management Systems (DBMS)",
       "Computer Networks",
-      "Operating System and System Programming",
-      "Digital Signal Processing",
-      "Artificial Intelligence(AI)",
-      "Computer Graphics",
+      "Computer Graphics & OpenGL",
       "Digital Image Processing",
       "Microprocessors & Microcontrollers",
       "System Analysis & Design",
     ],
   },
 
-  // Projects
+  // Projects with detailed bullet points and clean links
   projects: [
     {
-      name: "Zap Shift",
+      id: "zap-shift",
+      name: "Zap Shift — Parcel Delivery & Logistics Management System",
+      category: "web",
       description:
-        "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
+        "Full-stack parcel delivery platform with role-based dashboard, order tracking, and dynamic pricing calculators.",
+      bulletPoints: [
+        "Architected responsive single-page client with React, Vite, and Tailwind CSS for seamless parcel booking.",
+        "Implemented RESTful backend API using Node.js and Express.js with MongoDB database persistence.",
+        "Integrated authentication workflows, status timeline trackers, and responsive mobile-first UI components.",
+      ],
       technologies: [
         "React",
         "Vite",
@@ -175,13 +130,20 @@ export const resumeData: ResumeData = {
       githubUrl: "https://github.com/Farjana02mim/zap-shift-client",
       githubClientUrl: "https://github.com/Farjana02mim/zap-shift-client",
       githubServerUrl: "https://github.com/Farjana02mim/zap-shift-server",
-      // TODO: এখানে আপনার deployed live link বসান, e.g. "https://zap-shift.vercel.app"
       liveUrl: undefined,
+      featured: true,
     },
     {
-      name: "Art Gallery",
+      id: "art-gallery",
+      name: "Art Gallery — Creative Showcase & Artist Marketplace",
+      category: "web",
       description:
-        "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
+        "Interactive art portfolio and marketplace web application supporting craft categorization and user reviews.",
+      bulletPoints: [
+        "Developed modular React components with responsive Tailwind styling for high-resolution artwork exhibition.",
+        "Engineered Express.js REST API with MongoDB to handle craft catalog indexing, search, and secure CRUD operations.",
+        "Deployed live application with Firebase hosting and optimized static assets for fast load performance.",
+      ],
       technologies: [
         "React",
         "Vite",
@@ -189,17 +151,25 @@ export const resumeData: ResumeData = {
         "Node.js",
         "Express.js",
         "MongoDB",
-        "REST API",
+        "Firebase",
       ],
       githubUrl: "https://github.com/Farjana02mim/Art-Gallery-Client",
       githubClientUrl: "https://github.com/Farjana02mim/Art-Gallery-Client",
       githubServerUrl: "https://github.com/Farjana02mim/Art-Gallery-Server",
       liveUrl: "https://art-gallery-85d90.web.app/",
+      featured: true,
     },
     {
-      name: "Pet Adoption Supply",
+      id: "pet-adoption",
+      name: "Pet Adoption & Care Supply Platform",
+      category: "web",
       description:
-        "Built as a hands-on full-stack project to practice modern frontend and backend development, API integration, database management, and responsive UI design.",
+        "Community web platform connecting animal shelters with prospective adopters and pet care suppliers.",
+      bulletPoints: [
+        "Built intuitive pet catalog with dynamic filtering by species, breed, age, and adoption status in React.",
+        "Created secure backend endpoints with Express and MongoDB for adoption applications and item inventory management.",
+        "Integrated interactive feedback states, validation handling, and deployed full-stack live prototype.",
+      ],
       technologies: [
         "React",
         "Vite",
@@ -214,11 +184,19 @@ export const resumeData: ResumeData = {
       githubServerUrl:
         "https://github.com/Farjana02mim/petAdoptionSupply-server",
       liveUrl: "https://pet-adoption-supply.web.app/",
+      featured: true,
     },
     {
-      name: "Rainfall Prediction Classifier",
+      id: "rainfall-prediction",
+      name: "Rainfall Prediction Classifier — Machine Learning Pipeline",
+      category: "ml",
       description:
-        "Explored supervised classification workflows, weather data preprocessing, and model evaluation techniques using Scikit-learn.",
+        "Supervised machine learning pipeline evaluating classification models for precipitation forecasting.",
+      bulletPoints: [
+        "Conducted end-to-end data preprocessing, missing-value imputation, and feature scaling using Pandas & NumPy.",
+        "Trained and compared Logistic Regression and Random Forest classifiers utilizing Scikit-learn.",
+        "Evaluated classification performance using Confusion Matrix, Accuracy, Precision, Recall, and ROC-AUC curves.",
+      ],
       technologies: [
         "Python",
         "Pandas",
@@ -226,47 +204,62 @@ export const resumeData: ResumeData = {
         "Scikit-learn",
         "Logistic Regression",
         "Random Forest",
-        "Data Preprocessing",
-        "Model Evaluation",
       ],
       githubUrl: "https://github.com/Farjana02mim/Rainfall_Prediction",
       liveUrl: undefined,
+      featured: true,
     },
     {
-      name: "Computer Graphics Project",
+      id: "computer-graphics",
+      name: "Interactive Computer Graphics & 3D Rendering System",
+      category: "graphics",
       description:
-        "Developed while learning fundamental computer graphics concepts, 2D/3D transformations, and interactive rendering algorithms in OpenGL.",
+        "Academic computer graphics engine implementing 2D/3D transformations and custom rasterization algorithms in OpenGL.",
+      bulletPoints: [
+        "Implemented Bresenham's line and circle algorithms, polygon clipping, and geometric transformations in C++.",
+        "Engineered OpenGL rendering pipeline featuring camera projections, lighting models, and viewport controls.",
+      ],
       technologies: [
         "C++",
         "OpenGL",
         "Computer Graphics",
-        "Graphics Algorithms",
+        "Geometric Transformations",
       ],
       githubUrl: "https://github.com/Farjana02mim/Computer_Graphics_Project",
       liveUrl: undefined,
+      featured: false,
     },
     {
-      name: "University Management System",
+      id: "university-management",
+      name: "University Student & Department Management System",
+      category: "system",
       description:
-        "Built as a hands-on project to practice object-oriented programming, data structures, and file handling in C++.",
+        "Console-based object-oriented academic administration system built with C++ and binary file storage.",
+      bulletPoints: [
+        "Designed class hierarchies applying inheritance, encapsulation, and polymorphism principles in C++.",
+        "Implemented persistent file storage mechanisms for managing student records, course enrollment, and grade calculation.",
+      ],
       technologies: ["C++", "OOP", "Data Structures", "File Handling"],
-      githubUrl:
-        "https://github.com/Farjana02mim/University_Management_System",
+      githubUrl: "https://github.com/Farjana02mim/University_Management_System",
       liveUrl: undefined,
+      featured: false,
     },
   ],
 
   // Relevant Coursework
   coursework: [
     "Data Structures & Algorithms",
-    "Database Systems",
+    "Database Management Systems (DBMS)",
     "Computer Networks",
-    "Computer Architecture",
-    "Microprocessors",
-    "Digital Image Processing",
-    "Computer Graphics",
+    "Computer Architecture & Organization",
+    "Operating Systems & System Programming",
+    "Digital Signal & Image Processing (DIP)",
+    "Computer Graphics & OpenGL",
     "System Analysis & Design",
-    "Machine Learning",
+    "Artificial Intelligence & Machine Learning",
+    "Discrete Mathematics",
+    "Microprocessors & Microcontrollers",
+    "Design and Analysis of Algorithms",
   ],
 
   // Certifications
@@ -275,33 +268,123 @@ export const resumeData: ResumeData = {
       name: "Machine Learning with Python",
       issuer: "Coursera / IBM",
       date: "August 2026",
-      url: "https://lnkd.in/gtn-9d7x",
+      url: "/certificates/coursera-ml-python-ibm.jpg",
+      description:
+        "Covers supervised & unsupervised ML algorithms, regression, classification, clustering, and Scikit-learn pipelines.",
     },
     {
-      name: "IEEE Membership",
-      issuer: "IEEE",
+      name: "IEEE Student Membership",
+      issuer: "Institute of Electrical and Electronics Engineers (IEEE)",
       date: "2026",
       url: "/certificates/ieee-membership-2026.jpg",
+      description:
+        "Active student member participating in international technical seminars and academic knowledge exchanges.",
     },
     {
       name: "IEEE Women in Engineering (WIE) Membership",
       issuer: "IEEE Women in Engineering",
       date: "2026",
       url: "/certificates/ieee-wie-membership-2026.jpg",
+      description:
+        "Member supporting women in engineering, research advancement, and leadership in technology.",
+    },
+  ],
+
+  // Extra-curricular & Achievements
+  extraCurricular: [
+    {
+      id: "jstu-iupc-2025",
+      title: "JSTU IUPC 2025 — Top Girls Team",
+      category: "Programming Contest",
+      organization: "JSTU Inter-University Programming Contest",
+      date: "2025",
+      description:
+        "Recognized as the Top Girls Team at the Inter-University Programming Contest 2025, solving competitive programming challenges.",
+      icon: "Trophy",
+      isPlaceholder: false,
+    },
+    {
+      id: "robotics-iot-poster",
+      title: "Poster Presentation — Top Girls Team Award",
+      category: "Conference Presentation",
+      organization:
+        "National Conference on Robotics & IoT, Dept. of CSE, BSFMSTU",
+      date: "2024",
+      description:
+        "Presented research poster on IoT applications and awarded Top Girls Team recognition at the national conference.",
+      icon: "Award",
+      isPlaceholder: false,
+    },
+    {
+      id: "robotics-iot-workshop",
+      title: "National Workshop on Robotics & IoT",
+      category: "Technical Workshop",
+      organization:
+        "National Conference on Robotics & IoT, Dept. of CSE, BSFMSTU",
+      date: "2024",
+      description:
+        "Participated in hands-on technical workshop covering microcontrollers, sensor interfacing, and IoT architecture.",
+      icon: "Layers",
+      isPlaceholder: false,
+    },
+    {
+      id: "july-uprising-day-2024",
+      title: "Video Content Competition — 3rd Place",
+      category: "Media & Culture",
+      organization: "Jamalpur Science & Technology University",
+      date: "2024",
+      description:
+        "Awarded 3rd place in university-wide documentary and video storytelling competition.",
+      icon: "Award",
+      isPlaceholder: false,
+    },
+    {
+      id: "ndf-bd-debate-2025",
+      title: "1st NDF BD Debate Festival Participation",
+      category: "Public Speaking",
+      organization:
+        "National Debate Federation Bangladesh & JSTU Debating Society",
+      date: "2025",
+      description:
+        "Represented university in formal parliamentary style debates on technology and society.",
+      icon: "Award",
+      isPlaceholder: false,
+    },
+  ],
+
+  // References
+  references: [
+    {
+      name: "Faculty Advisor",
+      title:
+        "Associate Professor, Department of Computer Science & Engineering",
+      institution: "Jamalpur Science and Technology University",
+      email: "hasan.cse@bsfmstu.ac.bd",
+      phone: "Available upon formal request",
+    },
+    {
+      name: "JSTU Administration",
+      title:
+        "",
+      institution: "Jamalpur Science and Technology University",
+      email: "info@jstu.ac.bd",
+      phone: "+8802-223377503",
     },
   ],
 
   // Currently Learning
   currentlyLearning: [
-    "Advanced Web Development",
-    "Machine Learning",
-    "Data Analysis",
-    "Deep Learning",
-    "Research",
+    "Full-Stack Web Architecture",
+    "Machine Learning & Deep Learning",
+    "Data Preprocessing & Analysis",
+    "Open-Source Contribution",
   ],
 
-  // Notes
-  certificationsNote: "More certifications will be added as I complete them.",
+  certificationsNote:
+    "More certifications and course completions will be appended regularly.",
   experienceNote:
-    "Currently building experience through academic and personal projects.",
+    "Building practical industry and academic experience through hands-on full-stack and machine learning software development.",
 };
+
+export const resumeData = initialResumeData;
+export default initialResumeData;
