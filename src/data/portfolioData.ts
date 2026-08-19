@@ -658,7 +658,7 @@ export const achievementsData: AchievementItem[] = [
       "Participated in a national-level workshop exploring robotics and IoT concepts, hands-on sessions, and applied engineering practices.",
     icon: "Layers",
     isPlaceholder: false,
-    image: "/certificates/robotics-iot-workshop-participation.jpg",
+    image: "/certificates/robotics-iot-workshop-participation.png",
   },
   {
     id: "robotics-iot-poster",
@@ -671,7 +671,7 @@ export const achievementsData: AchievementItem[] = [
       "Presented a research poster at the National Conference on Robotics & IoT, recognized as part of the Top Girls Team.",
     icon: "Trophy",
     isPlaceholder: false,
-    image: "/certificates/robotics-iot-poster-presentation.jpg",
+    image: "/certificates/robotics-iot-poster-presentation.png",
   },
   {
     id: "innovation-showcasing-2024",
@@ -683,7 +683,7 @@ export const achievementsData: AchievementItem[] = [
       "Participated in the Innovation Showcasing programme organized by the E-Governance and Innovation Committee at Bangamata Sheikh Fojilatunnesa Mujib Science & Technology University.",
     icon: "Sparkles",
     isPlaceholder: false,
-    image: "/certificates/innovation-showcasing-2024.jpg",
+    image: "/certificates/innovation-showcasing-2024.png",
   },
   {
     id: "july-uprising-day-2024",
@@ -695,7 +695,7 @@ export const achievementsData: AchievementItem[] = [
       'Secured 3rd position in a subject-based video content competition themed "Smriti, Sangram O Rashtrachinta: July-August 2024 Sмrone" on the July Uprising.',
     icon: "Award",
     isPlaceholder: false,
-    image: "/certificates/july-uprising-day-2024.jpg",
+    image: "/certificates/july-uprising-day-2024.png",
   },
   {
     id: "ndf-bd-debate-2025",
@@ -708,7 +708,7 @@ export const achievementsData: AchievementItem[] = [
       "Actively participated in the First NDF BD Debate Festival organized by the JSTU Debating Society, engaging in the battle of ideas on an intellectual platform.",
     icon: "Award",
     isPlaceholder: false,
-    image: "/certificates/ndf-bd-debate-festival-2025.jpg",
+    image: "/certificates/ndf-bd-debate-festival-2025.png",
   },
   {
     id: "scholarship-1st-year",
@@ -720,7 +720,7 @@ export const achievementsData: AchievementItem[] = [
       "Awarded the Merit Scholarship-2023 for securing 2nd position at the 1st Year B.Sc Engineering Examination, Dept. of CSE.",
     icon: "GraduationCap",
     isPlaceholder: false,
-    image: "/certificates/merit-scholarship-2023.jpg",
+    image: "/certificates/merit-scholarship-2023.png",
   },
   {
     id: "jstu-iupc-2025",
@@ -744,7 +744,7 @@ export const achievementsData: AchievementItem[] = [
       'Grateful to have secured 2nd place in the "Phire Dekha July" Essay and Quiz Competition.',
     icon: "Award",
     isPlaceholder: false,
-    image: "/certificates/phire-dekha-july-quiz-2nd-place.jpg",
+    image: "/certificates/phire-dekha-july-quiz-2nd-place.png",
   },
   {
     id: "ieee-paving-pathways-2026",
