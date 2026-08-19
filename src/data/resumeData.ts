@@ -31,6 +31,12 @@ export const initialResumeData: ResumeData = {
     cgpa: "3.81 / 4.00",
     period: "August 2023 – August 2027 (Expected)",
     location: "Jamalpur, Bangladesh",
+    semesterBreakdown: [
+      { semester: "1.1", gpa: "3.52" },
+      { semester: "1.2", gpa: "3.87" },
+      { semester: "2.1", gpa: "3.86" },
+      { semester: "2.2", gpa: "3.97" },
+    ],
   },
 
   // Academic Achievements (Verified)
@@ -364,8 +370,7 @@ export const initialResumeData: ResumeData = {
     },
     {
       name: "JSTU Administration",
-      title:
-        "",
+      title: "",
       institution: "Jamalpur Science and Technology University",
       email: "info@jstu.ac.bd",
       phone: "+8802-223377503",

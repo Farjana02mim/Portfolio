@@ -52,6 +52,10 @@ export interface EducationData {
   cgpa: string;
   period: string;
   location?: string;
+  semesterBreakdown?: Array<{
+      semester: string;
+      gpa: string;
+    }>;
 }
 
 export interface ReferenceItem {

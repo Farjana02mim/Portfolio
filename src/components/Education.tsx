@@ -14,6 +14,7 @@ import {
   Star
 } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
+import { CgpaGraph } from './CgpaGraph';
 
 interface EducationProps {
   isDark: boolean;
@@ -49,7 +50,7 @@ export function Education({ isDark }: EducationProps) {
             Education
           </h2>
           <p className={`text-base sm:text-lg leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-            Undergraduate studies in Computer Science and Engineering with foundational coursework and academic achievements.
+            Undergraduate studies in Computer Science and Engineering with foundational coursework, semester progression, and academic achievements.
           </p>
         </motion.div>
 
@@ -67,7 +68,7 @@ export function Education({ isDark }: EducationProps) {
             }`}
           >
             {/* Degree & Institution Header */}
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-8 border-b border-slate-800/80">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 pb-8 border-b border-slate-200 dark:border-slate-800/80">
               <div className="flex items-start gap-4">
                 <div className="p-3.5 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 shrink-0">
                   <GraduationCap size={32} />
@@ -80,6 +81,9 @@ export function Education({ isDark }: EducationProps) {
                     </span>
                     <span className="px-3 py-0.5 rounded-full text-xs font-mono font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">
                       CGPA: {educationData.cgpa}
+                    </span>
+                    <span className="px-3 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                      Top 2 Standing
                     </span>
                   </div>
 
@@ -143,6 +147,14 @@ export function Education({ isDark }: EducationProps) {
                   Discipline: Computer Science & Engineering
                 </span>
               </div>
+            </div>
+
+            {/* Interactive CGPA Progression Graph */}
+            <div className="pt-8">
+              <CgpaGraph 
+                isDark={isDark} 
+                semesterGrades={educationData.semesterGrades} 
+              />
             </div>
 
             {/* Academic Achievements Sub-Section */}
