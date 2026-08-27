@@ -299,17 +299,6 @@ export const initialResumeData: ResumeData = {
   // Extra-curricular & Achievements
   extraCurricular: [
     {
-      id: "jstu-iupc-2025",
-      title: "JSTU IUPC 2025 — Top Girls Team",
-      category: "Programming Contest",
-      organization: "JSTU Inter-University Programming Contest",
-      date: "2025",
-      description:
-        "Recognized as the Top Girls Team at the Inter-University Programming Contest 2025, solving competitive programming challenges.",
-      icon: "Trophy",
-      isPlaceholder: false,
-    },
-    {
       id: "robotics-iot-poster",
       title: "Poster Presentation — Top Girls Team Award",
       category: "Conference Presentation",
@@ -354,6 +343,71 @@ export const initialResumeData: ResumeData = {
       description:
         "Represented university in formal parliamentary style debates on technology and society.",
       icon: "Award",
+      isPlaceholder: false,
+    },
+    {
+      id: "jstu-iupc-2025",
+      title: "JSTU IUPC 2025 — Top Girls Team",
+      category: "Programming Contest",
+      organization: "JSTU Inter-University Programming Contest",
+      date: "2025",
+      description:
+        "Recognized as the Top Girls Team at the Inter-University Programming Contest 2025, solving competitive programming challenges.",
+      icon: "Trophy",
+      isPlaceholder: false,
+    },
+    {
+      id: "jstu-iupc-2026",
+
+      title: "JSTU IUPC 2026 — Participation Certificate",
+
+      category: "Programming Contest",
+
+      organization: "JSTU Inter-University Programming Contest",
+
+      date: "2026",
+
+      description:
+        "Successfully participated in the Inter-University Programming Contest 2026, demonstrating enthusiasm, active engagement, and problem-solving skills in competitive programming.",
+
+      icon: "Code2",
+
+      isPlaceholder: false,
+    },
+    {
+      id: "jstu-iupc-2026-top-girls",
+
+      title: "JSTU IUPC 2026 — Top Girls Team",
+
+      category: "Programming Contest",
+
+      organization: "JSTU Inter-University Programming Contest",
+
+      date: "2026",
+
+      description:
+        "Recognized as a member of the Top Girls Team for outstanding performance, active participation, and strong problem-solving skills in the Inter-University Programming Contest 2026.",
+
+      icon: "Trophy",
+
+      isPlaceholder: false,
+    },
+    {
+      id: "jstu-seminar-2026-competitive-programming",
+
+      title: "JSTU Seminar 2026 — Competitive Programming & Problem-Solving",
+
+      category: "Seminar",
+
+      organization: "Institutional Quality Assurance Cell (IQAC), JSTU",
+
+      date: "2026",
+
+      description:
+        "Successfully participated in the seminar on Competitive Programming and Problem-Solving for Career Excellence, organized by the Institutional Quality Assurance Cell (IQAC), JSTU, with technical support from the Department of CSE, JSTU. The seminar featured Professor Dr. Md. Kaykobad, Distinguished Professor, Department of CSE, BRAC University, as the keynote speaker.",
+
+      icon: "Code2",
+
       isPlaceholder: false,
     },
   ],

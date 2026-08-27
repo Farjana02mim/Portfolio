@@ -648,6 +648,18 @@ export const certifications: CertificationItem[] = [
 
 export const achievementsData: AchievementItem[] = [
   {
+    id: "scholarship-1st-year",
+    title: "1st Year — 2nd Position — Merit Scholarship",
+    category: "Academic",
+    organization: "Jamalpur Science and Technology University",
+    date: "2023",
+    description:
+      "Awarded the Merit Scholarship-2023 for securing 2nd position at the 1st Year B.Sc Engineering Examination, Dept. of CSE.",
+    icon: "GraduationCap",
+    isPlaceholder: false,
+    image: "/certificates/merit-scholarship-2023.png",
+  },
+  {
     id: "robotics-iot-workshop",
     title: "Workshop on Robotics & IoT",
     category: "Workshop",
@@ -711,18 +723,6 @@ export const achievementsData: AchievementItem[] = [
     image: "/certificates/ndf-bd-debate-festival-2025.png",
   },
   {
-    id: "scholarship-1st-year",
-    title: "1st Year — 2nd Position — Merit Scholarship",
-    category: "Academic",
-    organization: "Jamalpur Science and Technology University",
-    date: "2023",
-    description:
-      "Awarded the Merit Scholarship-2023 for securing 2nd position at the 1st Year B.Sc Engineering Examination, Dept. of CSE.",
-    icon: "GraduationCap",
-    isPlaceholder: false,
-    image: "/certificates/merit-scholarship-2023.png",
-  },
-  {
     id: "jstu-iupc-2025",
     title: "JSTU IUPC 2025 — Top Girls Team",
     category: "Competition",
@@ -739,7 +739,7 @@ export const achievementsData: AchievementItem[] = [
     title: '"Phire Dekha July" Essay & Quiz Competition — 2nd Place',
     category: "Competition",
     organization: "University-level Essay & Quiz Competition",
-    date: "2024",
+    date: "2026",
     description:
       'Grateful to have secured 2nd place in the "Phire Dekha July" Essay and Quiz Competition.',
     icon: "Award",
@@ -769,6 +769,66 @@ export const achievementsData: AchievementItem[] = [
     icon: "Layers",
     isPlaceholder: false,
     image: "/certificates/ieee-beyond-membership-webinar-2026.jpg",
+  },
+  {
+    id: "jstu-seminar-competitive-programming-2026",
+
+    title: "JSTU Seminar 2026 — Competitive Programming & Problem-Solving",
+
+    category: "Seminar",
+
+    organization: "Institutional Quality Assurance Cell (IQAC), JSTU",
+
+    date: "27 August 2026",
+
+    description:
+      'Participated in the seminar "Competitive Programming and Problem-Solving for Career Excellence," organized by the Institutional Quality Assurance Cell (IQAC), JSTU, with technical support from the Department of CSE, JSTU. The keynote speaker was Professor Dr. Md. Kaykobad, Distinguished Professor, Department of CSE, BRAC University.',
+
+    icon: "Code2",
+
+    isPlaceholder: false,
+
+    image: "/certificates/jstu-seminar-competitive-programming-2026.png",
+  },
+  {
+    id: "jstu-iupc-2026-participation",
+
+    title: "JSTU IUPC 2026 — Participation Certificate",
+
+    category: "Programming Contest",
+
+    organization: "JSTU Inter-University Programming Contest",
+
+    date: "2026",
+
+    description:
+      "Successfully participated in the JSTU Inter-University Programming Contest 2026, demonstrating active engagement, competitive programming skills, teamwork, and problem-solving abilities.",
+
+    icon: "Code2",
+
+    isPlaceholder: false,
+
+    image: "/certificates/jstu-iupc-2026-participation.png",
+  },
+  {
+    id: "jstu-iupc-top-girls-team-2026",
+
+    title: "JSTU IUPC 2026 — Top Girls Team",
+
+    category: "Programming Contest",
+
+    organization: "JSTU Inter-University Programming Contest",
+
+    date: "2026",
+
+    description:
+      "Recognized as a member of the Top Girls Team for outstanding performance, active participation, and strong problem-solving skills in the Inter-University Programming Contest 2026.",
+
+    icon: "Trophy",
+
+    isPlaceholder: false,
+
+    image: "/certificates/top-girls-team-iupc-2026.png",
   },
 ];
 
