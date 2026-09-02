@@ -830,6 +830,26 @@ export const achievementsData: AchievementItem[] = [
 
     image: "/certificates/top-girls-team-iupc-2026.png",
   },
+  {
+    id: "jstu-training-deep-learning-explainable-ai-2026",
+
+    title: "Deep Learning & Explainable AI — Training Program",
+
+    category: "Training Program",
+
+    organization: "JSTU IEEE Student Branch & JSTU Robotics Club",
+
+    date: "2026",
+
+    description:
+      "Successfully participated in the 3 Days Hands-on Training Program, Learn to Conduct Research with “Deep Learning & Explainable AI: From Foundation to Publication,” held at Jamalpur Science & Technology University (JSTU), Bangladesh.",
+
+    icon: "Brain",
+
+    isPlaceholder: false,
+
+    image: "/certificates/deep-learning-explainable-ai-training-2026.png",
+  },
 ];
 
 export const developerProfiles: DeveloperProfile[] = [

@@ -410,6 +410,24 @@ export const initialResumeData: ResumeData = {
 
       isPlaceholder: false,
     },
+    {
+      id: "jstu-training-deep-learning-explainable-ai",
+
+      title: "3 Days Hands-on Training — Deep Learning & Explainable AI",
+
+      category: "Training Program",
+
+      organization: "JSTU IEEE Student Branch & JSTU Robotics Club",
+
+      date: "2026",
+
+      description:
+        "Successfully participated in the 3 Days Hands-on Training Program, Learn to Conduct Research with “Deep Learning & Explainable AI: From Foundation to Publication,” held at Jamalpur Science & Technology University (JSTU), Bangladesh. The program focused on developing practical knowledge and research skills in Deep Learning, Explainable AI, and conducting research from foundational concepts to publication.",
+
+      icon: "Brain",
+
+      isPlaceholder: false,
+    },
   ],
 
   // References
