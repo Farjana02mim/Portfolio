@@ -294,6 +294,14 @@ export const initialResumeData: ResumeData = {
       description:
         "Member supporting women in engineering, research advancement, and leadership in technology.",
     },
+    {
+      name: "3 Days Hands-on Training — Deep Learning & Explainable AI",
+      issuer: "JSTU IEEE Student Branch & JSTU Robotics Club",
+      date: "2026",
+      url: "/certificates/deep-learning-explainable-ai-training-2026.png",
+      description:
+        "Successfully participated in the 3 Days Hands-on Training Program, Learn to Conduct Research with “Deep Learning & Explainable AI: From Foundation to Publication,” held at Jamalpur Science & Technology University (JSTU), Bangladesh. The program focused on developing practical knowledge and research skills in Deep Learning, Explainable AI, and conducting research from foundational concepts to publication.",
+    },
   ],
 
   // Extra-curricular & Achievements
@@ -407,24 +415,6 @@ export const initialResumeData: ResumeData = {
         "Successfully participated in the seminar on Competitive Programming and Problem-Solving for Career Excellence, organized by the Institutional Quality Assurance Cell (IQAC), JSTU, with technical support from the Department of CSE, JSTU. The seminar featured Professor Dr. Md. Kaykobad, Distinguished Professor, Department of CSE, BRAC University, as the keynote speaker.",
 
       icon: "Code2",
-
-      isPlaceholder: false,
-    },
-    {
-      id: "jstu-training-deep-learning-explainable-ai",
-
-      title: "3 Days Hands-on Training — Deep Learning & Explainable AI",
-
-      category: "Training Program",
-
-      organization: "JSTU IEEE Student Branch & JSTU Robotics Club",
-
-      date: "2026",
-
-      description:
-        "Successfully participated in the 3 Days Hands-on Training Program, Learn to Conduct Research with “Deep Learning & Explainable AI: From Foundation to Publication,” held at Jamalpur Science & Technology University (JSTU), Bangladesh. The program focused on developing practical knowledge and research skills in Deep Learning, Explainable AI, and conducting research from foundational concepts to publication.",
-
-      icon: "Brain",
 
       isPlaceholder: false,
     },
