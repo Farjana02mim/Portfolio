@@ -641,11 +641,7 @@ export const certifications: CertificationItem[] = [
       "Successfully participated in the 3 Days Hands-on Training Program, Learn to Conduct Research with “Deep Learning & Explainable AI: From Foundation to Publication,” held at Jamalpur Science & Technology University (JSTU), Bangladesh.",
     credentialUrl: undefined,
     verified: true,
-    skills: [
-      "Deep Learning",
-      "Explainable AI",
-      "Research",
-    ],
+    skills: ["Deep Learning", "Explainable AI", "Research"],
     isPlaceholder: false,
     image: "/certificates/deep-learning-explainable-ai-training-2026.png",
   },
@@ -847,6 +843,27 @@ export const achievementsData: AchievementItem[] = [
 
     image: "/certificates/top-girls-team-iupc-2026.png",
   },
+  {
+    id: "coldcofe-webinar-2026-career-guideline-mnc",
+
+    title:
+      "ColdCofe Webinar 2026 — Career Guideline & Preparation About the Multinational Company in Bangladesh",
+
+    category: "Webinar",
+
+    organization: "ColdCofe Global Tech Community",
+
+    date: "2026",
+
+    description:
+      "Successfully participated in the webinar on Career Guideline & Preparation About the Multinational Company in Bangladesh, organized by ColdCofe Global Tech Community in collaboration with IEEE JSTU Student Branch, IEEE HSTU Student Branch, JSTU Robotics Club, and other partner organizations. The session was led by Abdullah Al Mamun, Founder & CTO of ColdCofe, offering practical guidance on career preparation and professional growth in multinational companies.",
+
+    icon: "Briefcase",
+
+    isPlaceholder: false,
+
+    image: "/certificates/coldcofe-webinar-career-guideline-2026.png",
+  },
 ];
 
 export const developerProfiles: DeveloperProfile[] = [
@@ -875,6 +892,25 @@ export const developerProfiles: DeveloperProfile[] = [
 ];
 
 export const githubRepos: GitHubRepo[] = [
+  {
+    name: "christie-inspired-auction-platform",
+    description:
+      "Editorial fine-art auction and consignment platform inspired by Christie's, featuring multi-role authentication, consignor accreditation, and real-time auction lot catalogues.",
+    language: "JavaScript / React",
+    languageColor: "#f7df1e",
+    stars: 0,
+    forks: 0,
+    url: "https://christie-client.vercel.app/",
+    topics: [
+      "react",
+      "tailwindcss",
+      "nodejs",
+      "mongodb",
+      "auction-platform",
+      "full-stack",
+    ],
+    updatedAt: "Recently Updated",
+  },
   {
     name: "zap-shift-client",
     description:

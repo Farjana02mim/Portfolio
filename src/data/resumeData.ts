@@ -114,6 +114,32 @@ export const initialResumeData: ResumeData = {
   // Projects with detailed bullet points and clean links
   projects: [
     {
+      id: "christie-inspired-auction-platform",
+      name: "Christie-Inspired Fine-Art Auction & Consignment Platform",
+      category: "web",
+      description:
+        "Editorial fine-art auction and consignment platform with multi-role dashboards, consignor accreditation, and real-time auction lot catalogues.",
+      bulletPoints: [
+        "Architected multi-role authentication and dashboards for Admin, Artist, and Collector user types.",
+        "Built consignor accreditation and artist verification workflows for a full-stack auction platform.",
+        "Developed real-time auction lot catalogues with responsive carousels using React and Tailwind CSS.",
+        "Implemented full-stack architecture with React, Tailwind CSS, Node.js, and MongoDB for scalable data handling.",
+      ],
+      technologies: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+      ],
+      githubUrl: undefined,
+      githubClientUrl: undefined,
+      githubServerUrl: undefined,
+      liveUrl: "https://christie-client.vercel.app/",
+      featured: true,
+    },
+    {
       id: "zap-shift",
       name: "Zap Shift — Parcel Delivery & Logistics Management System",
       category: "web",
@@ -416,6 +442,18 @@ export const initialResumeData: ResumeData = {
 
       icon: "Code2",
 
+      isPlaceholder: false,
+    },
+    {
+      id: "coldcofe-webinar-2026-career-guideline-mnc",
+      title:
+        "ColdCofe Webinar 2026 — Career Guideline & Preparation About the Multinational Company in Bangladesh",
+      category: "Webinar",
+      organization: "ColdCofe Global Tech Community",
+      date: "2026",
+      description:
+        "Successfully participated in the webinar on Career Guideline & Preparation About the Multinational Company in Bangladesh, organized by ColdCofe Global Tech Community in collaboration with IEEE JSTU Student Branch, IEEE HSTU Student Branch, JSTU Robotics Club, and other partner organizations. The session was led by Abdullah Al Mamun, Founder & CTO of ColdCofe, offering practical guidance on career preparation and professional growth in multinational companies.",
+      icon: "Briefcase",
       isPlaceholder: false,
     },
   ],
