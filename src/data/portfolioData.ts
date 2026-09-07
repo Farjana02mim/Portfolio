@@ -183,6 +183,30 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
+    id: "christie-inspired-auction-platform",
+    title: "Christie-Inspired Auction Platform",
+    category: "web",
+    categoryLabel: "Web Development",
+    description:
+      "An editorial fine-art auction and consignment platform built as a client project, featuring multi-role dashboards, accreditation workflows, and real-time auction catalogues.",
+    longDescription:
+      "A full-stack fine-art auction and consignment platform inspired by Christie's, built as a client project. Features multi-role authentication and dashboards for Admin, Artist, and Collector users, consignor accreditation and artist verification workflows, real-time auction lot catalogues with responsive carousels, and a full-stack architecture using React, Tailwind CSS, Node.js, and MongoDB.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+    ],
+    githubClient: undefined,
+    githubServer: undefined,
+    github: undefined,
+    liveDemo: "https://christie-client.vercel.app/",
+    featured: true,
+    badge: "Client Project",
+  },
+  {
     id: "zap-shift",
     title: "Zap Shift",
     category: "web",
