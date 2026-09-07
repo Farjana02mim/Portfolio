@@ -7,6 +7,7 @@ export const initialResumeData: ResumeData = {
   summary:
     "Proactive Computer Science and Engineering undergraduate with strong foundations in algorithms, full-stack web development, and machine learning workflows. Experienced in developing scalable web applications using React, Node.js, Express, and MongoDB, alongside training predictive models with Python and Scikit-learn. Proven academic excellence with 2 consecutive Merit Scholarships (2nd Position) and recognized competitive team participation.",
 
+    
   // Contact details
   email: "farjanaaktermim330@gmail.com",
   phone: "+880 1318-036509",
