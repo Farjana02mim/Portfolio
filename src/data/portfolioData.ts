@@ -888,6 +888,68 @@ export const achievementsData: AchievementItem[] = [
 
     image: "/certificates/coldcofe-webinar-career-guideline-2026.png",
   },
+  {
+    id: "grameenphone-academy-genai-prompt-engineering-2026",
+
+    title: "Grameenphone Academy — GenAI and Prompt Engineering",
+
+    category: "Course",
+
+    organization: "Grameenphone Academy",
+
+    date: "2026",
+
+    description:
+      "Successfully completed the course on GenAI and Prompt Engineering, organized by Grameenphone Academy. Gained practical knowledge on generative AI tools, effective prompt writing techniques, and their application in text, image, video, and voice generation for improved productivity.",
+
+    icon: "Sparkles",
+
+    isPlaceholder: false,
+
+    image:
+      "/certificates/grameenphone-academy-genai-prompt-engineering-2026.png",
+  },
+  {
+    id: "grameenphone-academy-personal-branding-ai-era-2026",
+
+    title: "Grameenphone Academy — Personal Branding in AI Era",
+
+    category: "Course",
+
+    organization: "Grameenphone Academy",
+
+    date: "2026",
+
+    description:
+      "Successfully completed the course on Personal Branding in AI Era, organized by Grameenphone Academy. Learned how to build an authentic personal brand through value creation, unique value proposition, profile optimization, and the ethical use of AI in professional development.",
+
+    icon: "UserCircle",
+
+    isPlaceholder: false,
+
+    image:
+      "/certificates/grameenphone-academy-personal-branding-ai-era-2026.png",
+  },
+  {
+    id: "grameenphone-academy-career-with-ai-2026",
+
+    title: "Grameenphone Academy — Career with AI",
+
+    category: "Course",
+
+    organization: "Grameenphone Academy (in collaboration with LEAD Academy)",
+
+    date: "2026",
+
+    description:
+      "Successfully completed the course on Career with AI, organized by Grameenphone Academy in collaboration with LEAD Academy. Covered practical career skills including resume optimization, effective workplace communication, interview preparation using the STAR method, and leveraging AI tools for career growth and future-of-work readiness.",
+
+    icon: "Briefcase",
+
+    isPlaceholder: false,
+
+    image: "/certificates/grameenphone-academy-career-with-ai-2026.png",
+  },
 ];
 
 export const developerProfiles: DeveloperProfile[] = [
