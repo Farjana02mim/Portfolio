@@ -37,6 +37,12 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
   const avgGpa = (gpaValues.reduce((acc, curr) => acc + curr, 0) / gpaValues.length).toFixed(2);
   const growth = (semesterGrades[semesterGrades.length - 1].gpa - semesterGrades[0].gpa).toFixed(2);
 
+  // Dynamic derived data (previously hardcoded)
+  const peakSemester = semesterGrades.find((s) => s.gpa === maxGpa) || semesterGrades[0];
+  const firstSemester = semesterGrades[0];
+  const lastSemester = semesterGrades[semesterGrades.length - 1];
+  const latestAchievement = [...semesterGrades].reverse().find((s) => s.achievement)?.achievement;
+
   // SVG Chart Geometry Constants
   const svgWidth = 640;
   const svgHeight = 260;
@@ -159,7 +165,7 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
             <span className="text-xs text-slate-400 font-normal ml-1">/ 4.00</span>
           </div>
           <span className="text-[10px] text-emerald-500 font-semibold mt-0.5 block">
-            4 Semesters Avg
+            {semesterGrades.length} Semester{semesterGrades.length > 1 ? 's' : ''} Avg
           </span>
         </div>
 
@@ -175,7 +181,7 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
             <span className="text-xs text-slate-400 font-normal ml-1">/ 4.00</span>
           </div>
           <span className="text-[10px] text-amber-500/90 font-semibold mt-0.5 block font-mono">
-            Semester 2.2 (99.3%)
+            Semester {peakSemester.shortName} ({peakSemester.percentage}%)
           </span>
         </div>
 
@@ -187,10 +193,10 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
             Growth Trajectory
           </span>
           <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-500 dark:text-emerald-400 mt-1">
-            +{growth}
+            {Number(growth) >= 0 ? '+' : ''}{growth}
           </div>
           <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5 block">
-            1.1 (3.52) → 2.2 (3.97)
+            {firstSemester.shortName} ({firstSemester.gpa.toFixed(2)}) → {lastSemester.shortName} ({lastSemester.gpa.toFixed(2)})
           </span>
         </div>
 
@@ -202,7 +208,7 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
             Academic Standing
           </span>
           <div className="text-base sm:text-lg font-bold font-display text-slate-800 dark:text-slate-200 mt-1">
-            2nd Position
+            {latestAchievement || '—'}
           </div>
           <span className="text-[10px] text-amber-600 dark:text-amber-400 font-medium mt-0.5 block">
             Scholarship Holder
@@ -535,7 +541,7 @@ export function CgpaGraph({ isDark, semesterGrades = [] }: CgpaGraphProps) {
         )}
       </AnimatePresence>
 
-      {/* Quick 4-Semester Badges Row */}
+      {/* Quick Semester Badges Row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4">
         {semesterGrades.map((sem) => (
           <button

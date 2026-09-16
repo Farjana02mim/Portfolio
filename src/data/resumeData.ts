@@ -28,7 +28,7 @@ export const initialResumeData: ResumeData = {
     degree: "Bachelor of Science in Computer Science & Engineering (CSE)",
     department: "Department of Computer Science & Engineering",
     institution: "Jamalpur Science and Technology University",
-    cgpa: "3.81 / 4.00",
+    cgpa: "3.83 / 4.00",
     period: "August 2023 – August 2027 (Expected)",
     location: "Jamalpur, Bangladesh",
     semesterBreakdown: [
@@ -36,6 +36,7 @@ export const initialResumeData: ResumeData = {
       { semester: "1.2", gpa: "3.87" },
       { semester: "2.1", gpa: "3.86" },
       { semester: "2.2", gpa: "3.97" },
+      { semester: "3.1", gpa: "3.94" },
     ],
   },
 
