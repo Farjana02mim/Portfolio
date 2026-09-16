@@ -16,6 +16,7 @@ import {
 import { educationData } from '../data/portfolioData';
 import { CgpaGraph } from './CgpaGraph';
 
+
 interface EducationProps {
   isDark: boolean;
 }
