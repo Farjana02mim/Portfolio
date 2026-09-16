@@ -489,6 +489,17 @@ export const initialResumeData: ResumeData = {
       icon: "Briefcase",
       isPlaceholder: false,
     },
+    {
+      id: "science-spark-cyber-security-awareness-2026",
+      title: "Cyber Security Awareness Workshop — Certificate of Participation",
+      category: "Workshop",
+      organization: "Science Spark (Media Partner: The Elevatex)",
+      date: "10 September 2026",
+      description:
+        "Successfully participated in the Cyber Security Awareness Workshop organized by Science Spark. Covered the fundamentals of cyber security and why it matters, common cyber threats, phishing and online scams, password security, two-factor authentication (2FA), and safe internet habits — with an emphasis on digital privacy, responsible internet usage, and building individual awareness for a safer digital environment.",
+      icon: "ShieldCheck",
+      isPlaceholder: false,
+    },
   ],
 
   // References

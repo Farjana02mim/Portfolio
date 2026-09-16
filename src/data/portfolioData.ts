@@ -572,6 +572,19 @@ export const educationData: EducationItem = {
       status: "Completed",
       trend: "peak",
     },
+    {
+      id: "sem-3-1",
+      semester: "3rd Year 1st Term",
+      shortName: "3.1",
+      gpa: 3.933,
+      maxGpa: 4.0,
+      year: "3rd Year",
+      term: "1st Term",
+      achievement: "1st Position",
+      percentage: 98.33,
+      status: "Completed",
+      trend: "peak",
+    },
   ],
   coursework: [
     "Data Structures & Algorithms",
@@ -949,6 +962,26 @@ export const achievementsData: AchievementItem[] = [
     isPlaceholder: false,
 
     image: "/certificates/grameenphone-academy-career-with-ai-2026.png",
+  },
+  {
+    id: "science-spark-cyber-security-awareness-2026",
+
+    title: "Cyber Security Awareness Workshop — Certificate of Participation",
+
+    category: "Workshop",
+
+    organization: "Science Spark (Media Partner: The Elevatex)",
+
+    date: "10 September 2026",
+
+    description:
+      "Successfully participated in the Cyber Security Awareness Workshop organized by Science Spark. Covered the fundamentals of cyber security and why it matters, common cyber threats, phishing and online scams, password security, two-factor authentication (2FA), and safe internet habits — with an emphasis on digital privacy, responsible internet usage, and building individual awareness for a safer digital environment.",
+
+    icon: "ShieldCheck",
+
+    isPlaceholder: false,
+
+    image: "/certificates/science-spark-cyber-security-awareness-2026.png",
   },
 ];
 
